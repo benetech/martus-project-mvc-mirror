@@ -56,7 +56,17 @@ public class GridFieldSpec extends FieldSpec
 	{
 		return columns.size();
 	}
-	
+
+	public Vector getColumns()
+	{
+		return columns;
+	}
+
+	public void setColumns(Vector columns)
+	{
+		this.columns = columns;
+	}
+
 	public String getColumnLabel(int column)
 	{
 		FieldSpec columnSpec = (FieldSpec)columns.get(column);

@@ -57,6 +57,7 @@ import org.martus.common.bulletin.BulletinConstants;
 import org.martus.common.fieldspec.FieldSpec;
 import org.martus.common.fieldspec.FieldTypeMultiline;
 import org.martus.common.fieldspec.FormTemplate;
+import org.martus.common.fieldspec.MiniFieldSpec;
 import org.martus.util.UnicodeWriter;
 import org.xml.sax.InputSource;
 
@@ -77,7 +78,18 @@ public class ExportBulletins extends AbstractExport
 		ExporterThread exporterThread = new ExporterThread(getProgressDlg());
 		exporterThread.start();
 	}
-	
+
+	public boolean exportWithSpecifiedFields(File destFile, Vector bulletinsToUse, MiniFieldSpec[] fields) throws Exception
+	{
+		destinationFile = destFile;
+		bulletinsToExport = bulletinsToUse;
+		fieldsToExport = fields;
+		ExporterThread exporterThread = new ExporterThread(getProgressDlg());
+		exporterThread.start();
+
+		return !didErrorOccur();
+	}
+
 	protected void updateExportMessage(ExporterThread exporterThread,
 			int bulletinsExported, int numberOfMissingAttachment) 
 	{
@@ -133,7 +145,10 @@ public class ExportBulletins extends AbstractExport
 				
 				if (new CsvFileFilter(localization).accept(destinationFile))
 				{
-					exportAsCsvs();
+					if (fieldsToExport != null)
+						exportAsCsvsWithSpecifiedFields();
+					else
+						exportAsCsvs();
 				}
 				
 			}
@@ -147,7 +162,8 @@ public class ExportBulletins extends AbstractExport
 				int numberOfMissingAttachment = getNumberOfFailingAttachments();
 				int bulletinsExported = getNumberOfBulletinsExported();
 				updateExportMessage(this, bulletinsExported, numberOfMissingAttachment);
-				progressMeter.finished();
+				if (progressMeter != null)
+					progressMeter.finished();
 			}
 		}
 
@@ -176,23 +192,28 @@ public class ExportBulletins extends AbstractExport
 		{
 			exporter = new BulletinXmlExporter(getMainWindow().getApp(), getMainWindow().getLocalization(), progressMeter);
 			
-			return exportBulletins(bulletinsToExport, destinationFile.getParentFile());
+			return exportBulletins(bulletinsToExport, destinationFile.getParentFile(), null);
 		}
 		
-		private String exportBulletinsWithGroupedAttachments(Vector<Bulletin> bulletinsToExportForTemplate, File destinationDir) throws Exception
+		private String exportBulletinsWithGroupedAttachments(Vector<Bulletin> bulletinsToExportForTemplate, File destinationDir, MiniFieldSpec[] fields) throws Exception
 		{
 			exporter = new BulletinXmlExporterWithGroupedAttachments(getMainWindow().getApp(), getMainWindow().getLocalization(), progressMeter);
 			
-			return exportBulletins(bulletinsToExportForTemplate, destinationDir);
+			return exportBulletins(bulletinsToExportForTemplate, destinationDir, fields);
 		}
 
-		private String exportBulletins(Vector bulletinsToExportToUse, File parentDir) throws Exception
+		private String exportBulletins(Vector bulletinsToExportToUse, File parentDir, MiniFieldSpec[] fields) throws Exception
 		{
 			StringWriter writer = new StringWriter();
-			exporter.exportBulletins(writer, bulletinsToExportToUse, isExportPrivate(), isExportAttachments(), isExportAllVersions(), parentDir);
+			exporter.exportBulletins(writer, bulletinsToExportToUse, isExportPrivate(), isExportAttachments(), isExportAllVersions(), parentDir, fields);
 			writer.close();
 			
 			return writer.toString();
+		}
+
+		private void exportAsCsvsWithSpecifiedFields() throws Exception
+		{
+			exportBulletins("", bulletinsToExport, fieldsToExport);
 		}
 
 		private void exportAsCsvs() throws Exception
@@ -234,15 +255,16 @@ public class ExportBulletins extends AbstractExport
 			for (String formTemplateTitleAsKey : formTemplateTitlesAsKeys)
 			{
 				Vector<Bulletin> bulletinsToExportForTemplate = formTemplateTitleToBulletinMap.get(formTemplateTitleAsKey);
-				exportBulletins(formTemplateTitleAsKey, bulletinsToExportForTemplate);
+				exportBulletins(formTemplateTitleAsKey, bulletinsToExportForTemplate, null);
 			}
 		}
 
-		private void exportBulletins(String formTemplateTitle, Vector<Bulletin> bulletinsToExportForTemplate) throws Exception
+		private void exportBulletins(String formTemplateTitle, Vector<Bulletin> bulletinsToExportForTemplate, MiniFieldSpec[] fields) throws Exception
 		{
 			File destinationDir = findOrCreateDir(formTemplateTitle);
-			File csvDestinationFile = new File(destinationDir, destinationFile.getName());
-			String bulletinsAsXml = exportBulletinsWithGroupedAttachments(bulletinsToExportForTemplate, destinationDir);
+			String name = destinationFile.getName();
+			File csvDestinationFile = new File(destinationDir, name);
+			String bulletinsAsXml = exportBulletinsWithGroupedAttachments(bulletinsToExportForTemplate, destinationDir, fields);
 			InputSource xmlAsInputSource = new InputSource(new StringReader(bulletinsAsXml));
 			BulletinsAsXmlToCsvConverter xmlToCsvConverter = new BulletinsAsXmlToCsvConverter(xmlAsInputSource, csvDestinationFile.getAbsolutePath());
 			String errorMessagesDuringParsing = xmlToCsvConverter.parseAndTranslateFile();
@@ -401,6 +423,7 @@ public class ExportBulletins extends AbstractExport
 		
 	protected File destinationFile;
 	protected Vector bulletinsToExport;
+	private MiniFieldSpec[] fieldsToExport;
 }
 
 

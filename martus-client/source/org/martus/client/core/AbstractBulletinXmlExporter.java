@@ -27,7 +27,11 @@ package org.martus.client.core;
 import java.io.File;
 import java.io.IOException;
 import java.io.Writer;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.Vector;
 
@@ -45,6 +49,8 @@ import org.martus.common.bulletin.BulletinXmlExportImportConstants;
 import org.martus.common.database.ReadableDatabase;
 import org.martus.common.field.MartusField;
 import org.martus.common.fieldspec.FieldSpec;
+import org.martus.common.fieldspec.GridFieldSpec;
+import org.martus.common.fieldspec.MiniFieldSpec;
 import org.martus.common.packet.BulletinHistory;
 import org.martus.common.packet.ExtendedHistoryEntry;
 import org.martus.common.packet.ExtendedHistoryList;
@@ -62,7 +68,8 @@ abstract public class AbstractBulletinXmlExporter
 		bulletinsExported = 0;
 	}
 	
-	public void exportBulletins(Writer dest, Vector bulletins, boolean includePrivateData, boolean includeAttachments, boolean includeAllVersions, File attachmentsDirectory) throws Exception
+	public void exportBulletins(Writer dest, Vector bulletins, boolean includePrivateData, boolean includeAttachments,
+															boolean includeAllVersions, File attachmentsDirectory, MiniFieldSpec[] fieldsToExport) throws Exception
 	{
 		dest.write(MartusXml.getTagStartWithNewline(BulletinXmlExportImportConstants.MARTUS_BULLETINS));
 		writeXMLVersion(dest);
@@ -84,9 +91,9 @@ abstract public class AbstractBulletinXmlExporter
 			}
 			else
 			{
-				exportOneBulletin(dest, b, includePrivateData, includeAttachments, attachmentsDirectory);
+				exportOneBulletin(dest, b, includePrivateData, includeAttachments, attachmentsDirectory, fieldsToExport);
 				if(includeAllVersions)
-					exportOlderVersionsOf(dest, b, includePrivateData, includeAttachments, attachmentsDirectory);
+					exportOlderVersionsOf(dest, b, includePrivateData, includeAttachments, attachmentsDirectory, fieldsToExport);
 				
 				++bulletinsExported;
 			}
@@ -94,7 +101,8 @@ abstract public class AbstractBulletinXmlExporter
 		dest.write(MartusXml.getTagEnd(BulletinXmlExportImportConstants.MARTUS_BULLETINS));
 	}
 
-	private void exportOlderVersionsOf(Writer dest, Bulletin latest, boolean includePrivateData, boolean includeAttachments, File attachmentsDirectory) throws Exception
+	private void exportOlderVersionsOf(Writer dest, Bulletin latest, boolean includePrivateData, boolean includeAttachments,
+																		 File attachmentsDirectory, MiniFieldSpec[] fieldsToExport) throws Exception
 	{
 		BulletinHistory history = latest.getHistory();
 		for(int i = 0; i < history.size(); ++i)
@@ -107,7 +115,7 @@ abstract public class AbstractBulletinXmlExporter
 				continue;
 			}
 			Bulletin older = app.getStore().getBulletinRevision(uid);
-			exportOneBulletin(dest, older, includePrivateData, includeAttachments, attachmentsDirectory);
+			exportOneBulletin(dest, older, includePrivateData, includeAttachments, attachmentsDirectory, fieldsToExport);
 		}
 	}
 
@@ -214,12 +222,24 @@ abstract public class AbstractBulletinXmlExporter
 		dest.write(getXmlEncodedTagWithData(BulletinXmlExportImportConstants.BULLETIN_STATUS_LOCALIZED, statusLocalized));
 	}
 
-	private void writeBulletinFieldSpecs(Writer dest, Bulletin b, boolean includePrivateData) throws Exception
+	private void writeBulletinFieldSpecs(Writer dest, Bulletin b, boolean includePrivateData, MiniFieldSpec[] fieldsToExport) throws Exception
 	{
 		if(shouldIncludeTopSection(b, includePrivateData))
-			writeFieldSpecs(dest, b.getTopSectionFieldSpecs(), BulletinXmlExportImportConstants.MAIN_FIELD_SPECS);
+			if (fieldsToExport != null)
+			{
+				FieldSpec[] specs = findFieldSpecsInFieldSpecCollection(fieldsToExport, b.getTopSectionFieldSpecs());
+				writeFieldSpecs(dest, new FieldSpecCollection(specs), BulletinXmlExportImportConstants.MAIN_FIELD_SPECS);
+			}
+			else
+				writeFieldSpecs(dest, b.getTopSectionFieldSpecs(), BulletinXmlExportImportConstants.MAIN_FIELD_SPECS);
 		if(includePrivateData)
-			writeFieldSpecs(dest, b.getBottomSectionFieldSpecs(), BulletinXmlExportImportConstants.PRIVATE_FIELD_SPECS);
+			if (fieldsToExport != null)
+			{
+				FieldSpec[] specs = findFieldSpecsInFieldSpecCollection(fieldsToExport, b.getBottomSectionFieldSpecs());
+				writeFieldSpecs(dest, new FieldSpecCollection(specs), BulletinXmlExportImportConstants.MAIN_FIELD_SPECS);
+			}
+			else
+				writeFieldSpecs(dest, b.getBottomSectionFieldSpecs(), BulletinXmlExportImportConstants.PRIVATE_FIELD_SPECS);
 	}
 
 	private boolean shouldIncludeTopSection(Bulletin b, boolean includePrivateData)
@@ -246,12 +266,13 @@ abstract public class AbstractBulletinXmlExporter
 		dest.write(BulletinXmlExportImportConstants.NEW_LINE);
 	}
 
-	private void exportOneBulletin(Writer dest, Bulletin b, boolean includePrivateData, boolean includeAttachments, File attachmentsDirectory) throws Exception
+	private void exportOneBulletin(Writer dest, Bulletin b, boolean includePrivateData, boolean includeAttachments,
+																 File attachmentsDirectory, MiniFieldSpec[] fieldsToExport) throws Exception
 	{
 		dest.write(MartusXml.getTagStartWithNewline(BulletinXmlExportImportConstants.BULLETIN));
 	
 		writeBulletinMetaData(dest, b);
-		writeBulletinFieldSpecs(dest, b, includePrivateData);
+		writeBulletinFieldSpecs(dest, b, includePrivateData, fieldsToExport);
 	
 		dest.write(MartusXml.getTagStartWithNewline(BulletinXmlExportImportConstants.FIELD_VALUES));
 		
@@ -265,14 +286,20 @@ abstract public class AbstractBulletinXmlExporter
 	
 		if(shouldIncludeTopSection(b, includePrivateData))
 		{
-			writeFields(dest, b, b.getTopSectionFieldSpecs().asArray());
+			if (fieldsToExport != null)
+				writeFields(dest, b, findFieldSpecsInFieldSpecCollection(fieldsToExport, b.getTopSectionFieldSpecs()));
+			else
+				writeFields(dest, b, b.getTopSectionFieldSpecs().asArray());
 			if(includeAttachments)
 				writeAttachments(dest, attachmentsDirectory, b.getPublicAttachments(), BulletinXmlExportImportConstants.TOP_SECTION_ATTACHMENT_LIST);
 		}
 	
 		if(includePrivateData)
 		{
-			writeFields(dest, b, b.getBottomSectionFieldSpecs().asArray());
+			if (fieldsToExport != null)
+				writeFields(dest, b, findFieldSpecsInFieldSpecCollection(fieldsToExport, b.getBottomSectionFieldSpecs()));
+			else
+				writeFields(dest, b, b.getBottomSectionFieldSpecs().asArray());
 			if(includeAttachments)
 				writeAttachments(dest, attachmentsDirectory, b.getPrivateAttachments(), BulletinXmlExportImportConstants.BOTTOM_SECTION_ATTACHMENT_LIST);
 		}
@@ -280,6 +307,55 @@ abstract public class AbstractBulletinXmlExporter
 	
 		dest.write(MartusXml.getTagEnd(BulletinXmlExportImportConstants.BULLETIN));
 		dest.write(BulletinXmlExportImportConstants.NEW_LINE);
+	}
+
+	private FieldSpec[] findFieldSpecsInFieldSpecCollection(MiniFieldSpec[] fields, FieldSpecCollection fieldSpecs) throws Exception
+	{
+		List<FieldSpec> specList = new ArrayList<>();
+		Map<String, Vector<FieldSpec>> colsSpecMap = new HashMap<>();
+
+		for (MiniFieldSpec spec : fields)
+		{
+			String[] tagParts = spec.getTag().split("\\.");
+			String tag = tagParts[0];
+			FieldSpec fieldSpec = fieldSpecs.findBytag(tag);
+
+			if (fieldSpec != null)
+			{
+				if (fieldSpec.getType().isGrid() && tagParts.length > 1)
+				{
+					GridFieldSpec gridSpec = (GridFieldSpec) fieldSpec;
+					Vector<FieldSpec> colsSpecs = colsSpecMap.get(tag);
+
+					if (colsSpecs == null)
+					{
+						colsSpecs = gridSpec.getColumns();
+						colsSpecMap.put(tag, colsSpecs);
+						gridSpec.setColumns(new Vector());
+					}
+
+					FieldSpec colSpec = findColumnSpecByLabel(colsSpecs, tagParts[1]);
+
+					gridSpec.addColumn(colSpec);
+					fieldSpec = gridSpec;
+				}
+
+				specList.add(fieldSpec);
+			}
+		}
+
+		return specList.toArray(new FieldSpec[specList.size()]);
+	}
+
+	private FieldSpec findColumnSpecByLabel(Vector<FieldSpec> columns, String gridColumnLabel)
+	{
+		for (FieldSpec columnSpec : columns)
+		{
+			if (columnSpec.getLabel().equals(gridColumnLabel))
+				return columnSpec;
+		}
+
+		return null;
 	}
 
 	private String getAttachmentSubDirName(Bulletin bulletin)

@@ -120,7 +120,7 @@ abstract public class AbstractTestBulletinAsXmlConverters extends TestCaseEnhanc
 		miniLocalization.addEnglishTranslations(new String[]{"status:draft="+draftTranslation, "status:sealed="+sealedTranslation});
 		miniLocalization.setCurrentLanguageCode(MiniLocalization.ENGLISH);
 		BulletinXmlExporter exporter = new BulletinXmlExporter(app, miniLocalization, null);
-		exporter.exportBulletins(writer, listOfBulletinsToExport, true, false, false, attachmentDirectory);
+		exporter.exportBulletins(writer, listOfBulletinsToExport, true, false, false, attachmentDirectory, null);
 
 		return writer.toString();
 	}

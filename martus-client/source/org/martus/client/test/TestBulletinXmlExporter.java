@@ -1002,7 +1002,7 @@ public class TestBulletinXmlExporter extends TestCaseEnhanced
 		miniLocalization.addEnglishTranslations(new String[]{"status:draft="+draftTranslation, "status:sealed="+sealedTranslation});
 		miniLocalization.setCurrentLanguageCode(MiniLocalization.ENGLISH);
 		BulletinXmlExporter exporter = new BulletinXmlExporter(app, miniLocalization, null);
-		exporter.exportBulletins(writer, list, includePrivateData, includeAttachments, includeAllVersions, attachmentDirectory);
+		exporter.exportBulletins(writer, list, includePrivateData, includeAttachments, includeAllVersions, attachmentDirectory, null);
 		failingAttachments = exporter.getNumberOfFailingAttachments();
 		String result = writer.toString();
 		return result;

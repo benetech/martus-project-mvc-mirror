@@ -30,11 +30,13 @@ import java.awt.print.PrinterJob;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Vector;
 
 import javax.print.attribute.HashPrintRequestAttributeSet;
 import javax.swing.filechooser.FileFilter;
 
 import org.json.JSONObject;
+import org.martus.client.bulletinstore.ExportBulletins;
 import org.martus.client.core.MartusApp;
 import org.martus.client.core.PartialBulletin;
 import org.martus.client.core.SortableBulletinList;
@@ -60,6 +62,7 @@ import org.martus.client.swingui.dialogs.UiPushbuttonsDlg;
 import org.martus.client.swingui.dialogs.UiReportFieldChooserDlg;
 import org.martus.client.swingui.dialogs.UiReportFieldOrganizerDlg;
 import org.martus.client.swingui.dialogs.UiSortFieldsDlg;
+import org.martus.client.swingui.filefilters.CsvFileFilter;
 import org.martus.clientside.FormatFilter;
 import org.martus.common.EnglishCommonStrings;
 import org.martus.common.MiniLocalization;
@@ -73,6 +76,9 @@ import org.martus.util.UnicodeWriter;
 
 public class ActionMenuReports extends ActionPrint implements ActionDoer
 {
+	private static final boolean SHOULD_EXPORT_ALL_VERSIONS = false;
+	private static final boolean SHOULD_EXPORT_ATTACHMENTS = false;
+
 	public ActionMenuReports(UiMainWindow mainWindowToUse)
 	{
 		super(mainWindowToUse, "Reports");
@@ -251,9 +257,9 @@ public class ActionMenuReports extends ActionPrint implements ActionDoer
 		PartialBulletin[] unsortedPartialBulletins = sortableList.getUnsortedPartialBulletins();
 		int allPrivateBulletinCount = getNumberOfAllPrivateBulletins(unsortedPartialBulletins);
 		UiIncludePrivateDataDlg dlg = new UiIncludePrivateDataDlg(mainWindow, unsortedPartialBulletins.length, allPrivateBulletinCount);
-		dlg.setVisible(true);		
+		dlg.setVisible(true);
 		if (dlg.wasCancelButtonPressed())
-			return;			
+			return;
 		
 		options.includePrivate = dlg.wantsPrivateData();
 		if(!options.includePrivate)
@@ -300,14 +306,20 @@ public class ActionMenuReports extends ActionPrint implements ActionDoer
 		result.close();
 
 		UiPrintPreviewDlg printPreview = new UiPrintPreviewDlg(mainWindow, result);
-		printPreview.setVisible(true);		
+		printPreview.setVisible(true);
 		if(printPreview.wasCancelButtonPressed())
-			return;			
+			return;
 		boolean sendToDisk = printPreview.wantsPrintToDisk();
+		boolean exportToCsv = printPreview.wantsExportToCsv();
 		
 		boolean didPrint;
 		if(sendToDisk)
-			didPrint = printToDisk(result);				
+			didPrint = printToDisk(result);
+		else if (exportToCsv)
+		{
+			File destFile = chooseDestinationFile(new CsvFileFilter(getLocalization()));
+			didPrint = exportToCsv(destFile, options.includePrivate, sortableList, answers.getSpecs());
+		}
 		else
 			didPrint = printToPrinter(result);
 			
@@ -329,6 +341,16 @@ public class ActionMenuReports extends ActionPrint implements ActionDoer
 		return numberOfAllPrivate;
 	}
 
+	private boolean exportToCsv(File destFile, boolean includePrivate, SortableBulletinList list, MiniFieldSpec[] specs) throws Exception
+	{
+		Vector bulletinsToExport = mainWindow.getBulletins(list.getSortedUniversalIds());
+		ExportBulletins exporter = new ExportBulletins(mainWindow, null);
+		exporter.setExportPrivate(includePrivate);
+		exporter.setExportAttachments(SHOULD_EXPORT_ATTACHMENTS);
+		exporter.setExportAllVersions(SHOULD_EXPORT_ALL_VERSIONS);
+		return exporter.exportWithSpecifiedFields(destFile, bulletinsToExport, specs);
+	}
+
 	boolean printToDisk(ReportOutput output) throws Exception
 	{
 		File destFile = chooseDestinationFile();
@@ -340,7 +362,7 @@ public class ActionMenuReports extends ActionPrint implements ActionDoer
 		destination.close();
 		return true;
 	}
-	
+
 	static class BackgroundPrinter extends WorkerThread
 	{
 		public BackgroundPrinter(UiMainWindow mainWindowToUse, ReportOutput whereToPrint, ReportFormat reportFormatToUse, 

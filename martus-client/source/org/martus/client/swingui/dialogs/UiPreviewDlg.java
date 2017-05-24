@@ -58,14 +58,16 @@ public class UiPreviewDlg  extends JDialog implements ActionListener
 		setTitle(localization.getWindowTitle("PrintPreview"));
 		
 		printToPrinter = new UiButton(localization.getButtonLabel("PrintToPrinter"));
-		printToPrinter.addActionListener(this);		
+		printToPrinter.addActionListener(this);
 		printToFile = new UiButton(localization.getButtonLabel("PrintToFile"));
-		printToFile.addActionListener(this);		
+		printToFile.addActionListener(this);
+		exportAsCsv = new UiButton(localization.getButtonLabel("ExportAsCsv"));
+		exportAsCsv.addActionListener(this);
 		cancel = new UiButton(localization.getButtonLabel(EnglishCommonStrings.CANCEL));
-		cancel.addActionListener(this);	
+		cancel.addActionListener(this);
 		
 		Box buttons = Box.createHorizontalBox();
-		Utilities.addComponentsRespectingOrientation(buttons, new Component[] {Box.createHorizontalGlue(), printToPrinter, printToFile, cancel});
+		Utilities.addComponentsRespectingOrientation(buttons, new Component[] {Box.createHorizontalGlue(), printToPrinter, printToFile, exportAsCsv, cancel});
 
 		getContentPane().setLayout(new BorderLayout());
 		getContentPane().add(scrollablePreview, BorderLayout.CENTER);
@@ -79,7 +81,12 @@ public class UiPreviewDlg  extends JDialog implements ActionListener
 	{
 		return printToDisk;
 	}
-	
+
+	public boolean wantsExportToCsv()
+	{
+		return exportToCsv;
+	}
+
 	public boolean wasCancelButtonPressed()
 	{
 		return pressedCancel;
@@ -90,21 +97,31 @@ public class UiPreviewDlg  extends JDialog implements ActionListener
 		if(ae.getSource().equals(printToPrinter))
 		{
 			printToDisk = false;
+			exportToCsv = false;
 			pressedCancel = false;
 		}
 		if(ae.getSource().equals(printToFile))
 		{
 			printToDisk = true;
+			exportToCsv = false;
+			pressedCancel = false;
+		}
+		if (ae.getSource().equals(exportAsCsv))
+		{
+			printToDisk = false;
+			exportToCsv = true;
 			pressedCancel = false;
 		}
 		dispose();
 	}
 	
-	UiMainWindow mainWindow;	
+	UiMainWindow mainWindow;
 	JButton printToPrinter;
 	JButton printToFile;
+	JButton exportAsCsv;
 	JButton cancel;
 
 	boolean printToDisk = false;
+	boolean exportToCsv = false;
 	boolean pressedCancel = true;
 }

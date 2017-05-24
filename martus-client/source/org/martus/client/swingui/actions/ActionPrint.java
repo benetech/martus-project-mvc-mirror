@@ -104,15 +104,19 @@ public class ActionPrint extends UiMenuAction
 		}
 	}
 
-	File chooseDestinationFile()
+	File chooseDestinationFile(FormatFilter filter)
 	{
 		String defaultFilename = getLocalization().getFieldLabel("DefaultPrintToDiskFileName");
-		FormatFilter filter = new HtmlFilter();
 		File destination = mainWindow.showFileSaveDialog("PrintToFile", defaultFilename, filter);
 		return destination;
-		
 	}
-	
+
+	File chooseDestinationFile()
+	{
+		FormatFilter filter = new HtmlFilter();
+		return chooseDestinationFile(filter);
+	}
+
 	class HtmlFilter extends FormatFilter
 	{
 		@Override
