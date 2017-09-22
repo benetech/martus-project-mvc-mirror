@@ -36,6 +36,7 @@ import java.util.ResourceBundle;
 
 import org.martus.client.core.MartusApp;
 import org.martus.client.swingui.MartusLocalization;
+import org.martus.client.swingui.PureFxMainWindow;
 import org.martus.client.swingui.UiMainWindow;
 import org.martus.client.swingui.actions.ActionDoer;
 import org.martus.client.swingui.jfx.generic.data.MartusResourceBundle;
@@ -343,8 +344,9 @@ abstract public class FxController implements Initializable
 		FxController.applyStyleSheets(scene.getStylesheets(), fxmlDir, getLocalization().getCurrentLanguageCode(), POPUP_CSS);
 
 		popupStage.setScene(scene);
-		//FIXME: we beleive this is causing unwanted behavior on some mac machines.  Need further research.
-		//popupStage.getActualStage().setAlwaysOnTop(true);
+
+		PureFxMainWindow.updateIcon(popupStage.getActualStage());
+
 		showModalPopupStage(popupStage);
 		MartusLogger.log("Back from showModalPopupStage");
 		if(controller.getThrownException() != null)
