@@ -24,6 +24,8 @@ Boston, MA 02111-1307, USA.
 */
 package org.martus.client.swingui.dialogs;
 
+import org.martus.client.swingui.PureFxMainWindow;
+
 import javafx.geometry.Insets;
 import javafx.geometry.NodeOrientation;
 import javafx.scene.control.ButtonBar;
@@ -37,6 +39,7 @@ import javafx.scene.layout.BorderWidths;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 public class PureFxWarningMessageDlg extends Dialog
 {
@@ -52,6 +55,8 @@ public class PureFxWarningMessageDlg extends Dialog
 		gridPane.add(textLtoR, 0, 0);
 		gridPane.add(textRtoL, 0, 1);
 
+		Stage stage = (Stage) getDialogPane().getScene().getWindow();
+		PureFxMainWindow.updateIcon(stage);
 		setTitle(title);
 		getDialogPane().getButtonTypes().add(okButton);
 		setGraphic(null);

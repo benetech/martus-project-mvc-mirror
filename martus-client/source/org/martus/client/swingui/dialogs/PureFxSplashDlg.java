@@ -24,6 +24,7 @@ Boston, MA 02111-1307, USA.
 */
 package org.martus.client.swingui.dialogs;
 
+import org.martus.client.swingui.PureFxMainWindow;
 import org.martus.client.swingui.UiConstants;
 import org.martus.client.swingui.UiMainWindow;
 import org.martus.common.EnglishCommonStrings;
@@ -37,6 +38,7 @@ import javafx.scene.control.Dialog;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 
 public class PureFxSplashDlg extends Dialog
 {
@@ -49,6 +51,8 @@ public class PureFxSplashDlg extends Dialog
 
 		Pane mainPane = new StackPane();
 
+		Stage stage = (Stage) getDialogPane().getScene().getWindow();
+		PureFxMainWindow.updateIcon(stage);
 		setTitle("");
 		setGraphic(null);
 		setHeaderText(null);

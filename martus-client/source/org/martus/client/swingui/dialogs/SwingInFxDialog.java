@@ -29,6 +29,7 @@ import java.awt.Dimension;
 import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
 
+import org.martus.client.swingui.PureFxMainWindow;
 import org.martus.util.language.LanguageOptions;
 
 import javafx.application.Platform;
@@ -39,6 +40,7 @@ import javafx.scene.control.Dialog;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Screen;
+import javafx.stage.Stage;
 
 public abstract class SwingInFxDialog extends Dialog
 {
@@ -53,6 +55,8 @@ public abstract class SwingInFxDialog extends Dialog
 		Pane mainPane = new StackPane();
 		mainPane.getChildren().add(swingNode);
 
+		Stage stage = (Stage) getDialogPane().getScene().getWindow();
+		PureFxMainWindow.updateIcon(stage);
 		setTitle("");
 		setGraphic(null);
 		setHeaderText(null);

@@ -24,6 +24,7 @@ Boston, MA 02111-1307, USA.
 */
 package org.martus.client.swingui.dialogs;
 
+import org.martus.client.swingui.PureFxMainWindow;
 import org.martus.util.language.LanguageOptions;
 
 import javafx.geometry.Insets;
@@ -33,6 +34,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class PureFxPushButtonsDlg extends Dialog implements PushButtonsDlgInterface
 {
@@ -43,6 +45,8 @@ public class PureFxPushButtonsDlg extends Dialog implements PushButtonsDlgInterf
 		else
 			getDialogPane().setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
 
+		Stage stage = (Stage) getDialogPane().getScene().getWindow();
+		PureFxMainWindow.updateIcon(stage);
 		setTitle(title);
 		setGraphic(null);
 		setHeaderText(null);

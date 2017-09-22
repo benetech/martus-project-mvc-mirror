@@ -24,6 +24,7 @@ Boston, MA 02111-1307, USA.
 */
 package org.martus.client.swingui.dialogs;
 
+import org.martus.client.swingui.PureFxMainWindow;
 import org.martus.client.swingui.UiMainWindow;
 import org.martus.clientside.UiLocalization;
 import org.martus.common.EnglishCommonStrings;
@@ -40,6 +41,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 
 public class PureFxProgressWithCancelDlg extends Dialog implements ProgressMeterDialogInterface
 {
@@ -54,6 +56,8 @@ public class PureFxProgressWithCancelDlg extends Dialog implements ProgressMeter
 		tag = tagToUse;
 		UiLocalization localization = mainWindow.getLocalization();
 
+		Stage stage = (Stage) getDialogPane().getScene().getWindow();
+		PureFxMainWindow.updateIcon(stage);
 		setTitle(localization.getWindowTitle(tagToUse));
 		setGraphic(null);
 		setHeaderText(null);
