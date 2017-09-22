@@ -61,7 +61,7 @@ public class FxInSwingBulletinModifyDialog extends UiBulletinModifyDlg
 		super(b, observerToUse);
 
 		realFrame = new JFrame();
-		UiMainWindow.updateIcon(getSwingFrame());
+		observerToUse.updateIcon();
 		getSwingFrame().setTitle(getLocalization().getWindowTitle("create"));
 		
 		if(UiSession.isJavaFx())
