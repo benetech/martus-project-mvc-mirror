@@ -24,6 +24,7 @@ Boston, MA 02111-1307, USA.
 */
 package org.martus.client.swingui.dialogs;
 
+import org.martus.client.swingui.PureFxMainWindow;
 import org.martus.client.swingui.UiFontEncodingHelper;
 import org.martus.client.swingui.UiMainWindow;
 import org.martus.clientside.UiLocalization;
@@ -37,6 +38,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class PureFxStringInputDlg extends Dialog<String>
 {
@@ -54,6 +56,8 @@ public class PureFxStringInputDlg extends Dialog<String>
 		mainBox.setPadding(new Insets(5, 5, 5, 5));
 		mainBox.setSpacing(5);
 
+		Stage stage = (Stage) getDialogPane().getScene().getWindow();
+		PureFxMainWindow.updateIcon(stage);
 		setTitle(localization.getWindowTitle("input" + baseTag));
 		setGraphic(null);
 		setHeaderText(null);

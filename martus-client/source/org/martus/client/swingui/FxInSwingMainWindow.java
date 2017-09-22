@@ -28,6 +28,7 @@ package org.martus.client.swingui;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Frame;
+import java.awt.Image;
 import java.awt.Point;
 import java.awt.Window;
 import java.io.File;
@@ -123,7 +124,7 @@ public class FxInSwingMainWindow extends UiMainWindow
 	{
 
 		swingFrame = new MainSwingFrame(this);
-		UiMainWindow.updateIcon(getSwingFrame());
+		updateIcon();
 		setCurrentActiveFrame(this);
 		getSwingFrame().setVisible(true);
 		updateTitle();
@@ -710,6 +711,13 @@ public class FxInSwingMainWindow extends UiMainWindow
 	protected TemplateDlgInterface createTemplateDialog(ConfigInfo info, File defaultDetailsFile)
 	{
 		return new UiTemplateDlg(this, info, defaultDetailsFile);
+	}
+
+	public void updateIcon()
+	{
+		Image image = Utilities.getMartusIconImage();
+		getSwingFrame().setIconImage(image);
+		//com.apple.eawt.Application.getApplication().setDockIconImage(image);
 	}
 
 	private JFrame swingFrame;

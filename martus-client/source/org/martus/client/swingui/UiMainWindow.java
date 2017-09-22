@@ -28,7 +28,6 @@ package org.martus.client.swingui;
 
 import java.awt.Dimension;
 import java.awt.Frame;
-import java.awt.Image;
 import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
@@ -433,7 +432,7 @@ public abstract class UiMainWindow implements ClipboardOwner, TopLevelWindowInte
 	{
 		if(localization.isOfficialTranslation(languageCodeToTest))
 			return;
-		
+
 		URL untranslatedURL = UiMainWindow.class.getResource("UnofficialTranslationMessage.txt");
 		URL untranslatedRtoLURL = UiMainWindow.class.getResource("UnofficialTranslationMessageRtoL.txt");
 		
@@ -2476,16 +2475,8 @@ public abstract class UiMainWindow implements ClipboardOwner, TopLevelWindowInte
 	{
 		return getUiState();
 	}
-	
-	static public void updateIcon(JFrame window)
-	{
-		Image image = Utilities.getMartusIconImage();
-		if(image != null)
-		{
-			window.setIconImage(image);
-			//com.apple.eawt.Application.getApplication().setDockIconImage(image);		
-		}
-	}
+
+	public abstract void updateIcon();
 
 	public void setCurrentActiveFrame(TopLevelWindowInterface currentActiveFrame)
 	{

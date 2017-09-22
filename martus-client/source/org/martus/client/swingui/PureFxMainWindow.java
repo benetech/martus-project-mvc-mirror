@@ -29,6 +29,7 @@ import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Point;
 import java.io.File;
+import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
@@ -151,6 +152,7 @@ public class PureFxMainWindow extends UiMainWindow
 		fxStage.showCurrentPage();
 		restoreWindowSizeAndState();
 		realStage.setTitle(getLocalization().getWindowTitle("main"));
+		updateIcon();
 		realStage.show();
 	}
 	
@@ -241,6 +243,7 @@ public class PureFxMainWindow extends UiMainWindow
 	{
 		PureFxStage fxStage = (PureFxStage)stageToShow;
 		fxStage.showCurrentPage();
+		updateIcon();
 		fxStage.showAndWait();
 	}
 
@@ -249,6 +252,7 @@ public class PureFxMainWindow extends UiMainWindow
 	{
 		PureFxDialogStage dialogStage = new PureFxDialogStage(this, controller); 
 		dialogStage.showCurrentPage();
+		updateIcon();
 		dialogStage.showAndWait();
 	}
 	
@@ -739,6 +743,23 @@ public class PureFxMainWindow extends UiMainWindow
 	protected TemplateDlgInterface createTemplateDialog(ConfigInfo info, File defaultDetailsFile)
 	{
 		return new PureFxTemplateDlg(this, info, defaultDetailsFile);
+	}
+
+	public void updateIcon()
+	{
+		PureFxMainWindow.updateIcon(getActiveStage());
+	}
+
+	public static void updateIcon(Stage stage)
+	{
+		Image image = getMartusIconImage();
+		stage.getIcons().add(image);
+	}
+
+	public static Image getMartusIconImage()
+	{
+		InputStream image = PureFxMainWindow.class.getResourceAsStream("/org/martus/swing/MartusLogo.png");
+		return new Image(image);
 	}
 
 	private static Stage realStage;

@@ -50,7 +50,8 @@ public class PureFxBulletinModifyDialog extends UiBulletinModifyDlg
 		dialogStage = new PureFxDialogStage(getMainWindow(), bulletinEditorShellController); 
 		dialogStage.showCurrentPage();
 		safelyPopulateView();
-		
+
+		observerToUse.updateIcon();
 		dialogStage.getActualStage().setOnCloseRequest((event) -> closeWindowIfUserConfirms());
 	}
 

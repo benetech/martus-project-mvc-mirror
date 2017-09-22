@@ -27,6 +27,7 @@ package org.martus.client.swingui.dialogs;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.martus.client.swingui.PureFxMainWindow;
 import org.martus.common.MartusLogger;
 import org.martus.util.TokenReplacement;
 import org.martus.util.language.LanguageOptions;
@@ -36,6 +37,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class PureFxNotifyDlg extends Alert
 {
@@ -63,6 +65,8 @@ public class PureFxNotifyDlg extends Alert
 			contents = TokenReplacement.replaceTokens(contents, tokenReplacement);
 			buttons = TokenReplacement.replaceTokens(buttons, tokenReplacement);
 
+			Stage stage = (Stage) getDialogPane().getScene().getWindow();
+			PureFxMainWindow.updateIcon(stage);
 			setTitle(title);
 			setGraphic(null);
 			setHeaderText(null);

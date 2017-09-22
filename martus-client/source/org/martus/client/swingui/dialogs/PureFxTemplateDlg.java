@@ -29,6 +29,7 @@ import java.io.File;
 import java.io.IOException;
 
 import org.martus.client.core.ConfigInfo;
+import org.martus.client.swingui.PureFxMainWindow;
 import org.martus.client.swingui.UiFontEncodingHelper;
 import org.martus.client.swingui.UiMainWindow;
 import org.martus.clientside.UiLocalization;
@@ -48,6 +49,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class PureFxTemplateDlg extends Dialog<Boolean> implements TemplateDlgInterface
 {
@@ -65,6 +67,8 @@ public class PureFxTemplateDlg extends Dialog<Boolean> implements TemplateDlgInt
 		fontHelper = new UiFontEncodingHelper(info.getDoZawgyiConversion());
 		UiLocalization localization = mainWindow.getLocalization();
 
+		Stage stage = (Stage) getDialogPane().getScene().getWindow();
+		PureFxMainWindow.updateIcon(stage);
 		setTitle(localization.getWindowTitle("BulletinTemplate"));
 		setGraphic(null);
 		setHeaderText(null);
