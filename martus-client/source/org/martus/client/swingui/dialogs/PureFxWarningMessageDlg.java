@@ -39,7 +39,6 @@ import javafx.scene.layout.BorderWidths;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 
 public class PureFxWarningMessageDlg extends Dialog
 {
@@ -55,8 +54,7 @@ public class PureFxWarningMessageDlg extends Dialog
 		gridPane.add(textLtoR, 0, 0);
 		gridPane.add(textRtoL, 0, 1);
 
-		Stage stage = (Stage) getDialogPane().getScene().getWindow();
-		PureFxMainWindow.updateIcon(stage);
+		PureFxMainWindow.updateIcon(getDialogPane());
 		setTitle(title);
 		getDialogPane().getButtonTypes().add(okButton);
 		setGraphic(null);

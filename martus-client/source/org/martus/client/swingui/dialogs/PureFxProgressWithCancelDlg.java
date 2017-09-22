@@ -41,7 +41,6 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.HBox;
-import javafx.stage.Stage;
 
 public class PureFxProgressWithCancelDlg extends Dialog implements ProgressMeterDialogInterface
 {
@@ -56,8 +55,7 @@ public class PureFxProgressWithCancelDlg extends Dialog implements ProgressMeter
 		tag = tagToUse;
 		UiLocalization localization = mainWindow.getLocalization();
 
-		Stage stage = (Stage) getDialogPane().getScene().getWindow();
-		PureFxMainWindow.updateIcon(stage);
+		PureFxMainWindow.updateIcon(getDialogPane());
 		setTitle(localization.getWindowTitle(tagToUse));
 		setGraphic(null);
 		setHeaderText(null);

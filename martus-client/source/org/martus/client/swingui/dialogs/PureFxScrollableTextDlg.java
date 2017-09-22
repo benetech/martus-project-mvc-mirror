@@ -44,7 +44,6 @@ import javafx.scene.control.Dialog;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 public class PureFxScrollableTextDlg extends Dialog<Boolean>
 {
@@ -74,8 +73,7 @@ public class PureFxScrollableTextDlg extends Dialog<Boolean>
 			mainBox.setPadding(new Insets(5, 5, 5, 5));
 			mainBox.setSpacing(5);
 
-			Stage stage = (Stage) getDialogPane().getScene().getWindow();
-			PureFxMainWindow.updateIcon(stage);
+			PureFxMainWindow.updateIcon(getDialogPane());
 			setTitle(TokenReplacement.replaceTokens(windowTitle, tokenReplacement));
 			setGraphic(null);
 			setHeaderText(null);

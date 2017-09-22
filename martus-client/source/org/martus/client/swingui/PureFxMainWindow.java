@@ -101,6 +101,7 @@ import javafx.application.Platform;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Cursor;
 import javafx.scene.control.Alert;
+import javafx.scene.control.DialogPane;
 import javafx.scene.image.Image;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
@@ -750,6 +751,11 @@ public class PureFxMainWindow extends UiMainWindow
 		PureFxMainWindow.updateIcon(getActiveStage());
 	}
 
+	public static void updateIcon(DialogPane dialogPane)
+	{
+		updateIcon((Stage) dialogPane.getScene().getWindow());
+	}
+	
 	public static void updateIcon(Stage stage)
 	{
 		Image image = getMartusIconImage();

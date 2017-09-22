@@ -38,7 +38,6 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 public class PureFxStringInputDlg extends Dialog<String>
 {
@@ -56,8 +55,7 @@ public class PureFxStringInputDlg extends Dialog<String>
 		mainBox.setPadding(new Insets(5, 5, 5, 5));
 		mainBox.setSpacing(5);
 
-		Stage stage = (Stage) getDialogPane().getScene().getWindow();
-		PureFxMainWindow.updateIcon(stage);
+		PureFxMainWindow.updateIcon(getDialogPane());
 		setTitle(localization.getWindowTitle("input" + baseTag));
 		setGraphic(null);
 		setHeaderText(null);

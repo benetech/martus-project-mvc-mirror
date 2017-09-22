@@ -49,7 +49,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 public class PureFxTemplateDlg extends Dialog<Boolean> implements TemplateDlgInterface
 {
@@ -67,8 +66,7 @@ public class PureFxTemplateDlg extends Dialog<Boolean> implements TemplateDlgInt
 		fontHelper = new UiFontEncodingHelper(info.getDoZawgyiConversion());
 		UiLocalization localization = mainWindow.getLocalization();
 
-		Stage stage = (Stage) getDialogPane().getScene().getWindow();
-		PureFxMainWindow.updateIcon(stage);
+		PureFxMainWindow.updateIcon(getDialogPane());
 		setTitle(localization.getWindowTitle("BulletinTemplate"));
 		setGraphic(null);
 		setHeaderText(null);

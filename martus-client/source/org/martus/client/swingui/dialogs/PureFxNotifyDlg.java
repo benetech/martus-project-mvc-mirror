@@ -37,7 +37,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 public class PureFxNotifyDlg extends Alert
 {
@@ -65,8 +64,7 @@ public class PureFxNotifyDlg extends Alert
 			contents = TokenReplacement.replaceTokens(contents, tokenReplacement);
 			buttons = TokenReplacement.replaceTokens(buttons, tokenReplacement);
 
-			Stage stage = (Stage) getDialogPane().getScene().getWindow();
-			PureFxMainWindow.updateIcon(stage);
+			PureFxMainWindow.updateIcon(getDialogPane());
 			setTitle(title);
 			setGraphic(null);
 			setHeaderText(null);

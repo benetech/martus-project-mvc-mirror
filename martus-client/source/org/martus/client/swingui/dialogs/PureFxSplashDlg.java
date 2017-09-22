@@ -38,7 +38,6 @@ import javafx.scene.control.Dialog;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.web.WebView;
-import javafx.stage.Stage;
 
 public class PureFxSplashDlg extends Dialog
 {
@@ -51,8 +50,7 @@ public class PureFxSplashDlg extends Dialog
 
 		Pane mainPane = new StackPane();
 
-		Stage stage = (Stage) getDialogPane().getScene().getWindow();
-		PureFxMainWindow.updateIcon(stage);
+		PureFxMainWindow.updateIcon(getDialogPane());
 		setTitle("");
 		setGraphic(null);
 		setHeaderText(null);

@@ -40,7 +40,6 @@ import javafx.scene.control.Dialog;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Screen;
-import javafx.stage.Stage;
 
 public abstract class SwingInFxDialog extends Dialog
 {
@@ -55,8 +54,7 @@ public abstract class SwingInFxDialog extends Dialog
 		Pane mainPane = new StackPane();
 		mainPane.getChildren().add(swingNode);
 
-		Stage stage = (Stage) getDialogPane().getScene().getWindow();
-		PureFxMainWindow.updateIcon(stage);
+		PureFxMainWindow.updateIcon(getDialogPane());
 		setTitle("");
 		setGraphic(null);
 		setHeaderText(null);
