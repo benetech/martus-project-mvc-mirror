@@ -181,7 +181,7 @@ public class PureFxMainWindow extends UiMainWindow
 		getUiState().setCurrentAppDimension(getMainWindowSize());
 	}
 
-	private double getNonFullScreenHeight(double potentialHeight)
+	public static double getNonFullScreenHeight(double potentialHeight)
 	{
 		Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
 		final double screenHeight = screenBounds.getHeight();
