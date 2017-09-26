@@ -251,7 +251,12 @@ public class PureFxMainWindow extends UiMainWindow
 	@Override
 	public void createAndShowModalDialog(FxShellController controller, Dimension preferedDimension, String titleTag) throws Exception
 	{
-		PureFxDialogStage dialogStage = new PureFxDialogStage(this, controller); 
+		PureFxDialogStage dialogStage = new PureFxDialogStage(this, controller);
+		if (preferedDimension != null)
+		{
+			dialogStage.getActualStage().setHeight(preferedDimension.getHeight());
+			dialogStage.getActualStage().setWidth(preferedDimension.getWidth());
+		}
 		dialogStage.showCurrentPage();
 		updateIcon();
 		dialogStage.showAndWait();
