@@ -2,8 +2,8 @@
 # Language code:  bur
 # Language name:   Burmese (https://www.transifex.com/otf/teams/17076/my/)
 # Translated by:
-# Exported date:   2017-06-20 16:51:08 -0400
-# Client version:  Martus 5.2.0
+# Exported date:   2017-09-20 14:12:10 -0400
+# Client version:  Martus 6.1.0
 # Client build:
 # *** This MTF file was converted from a PO file
 
@@ -11,13 +11,13 @@
 -d7f5-button:AddContact=
 
 #____________________________=Add
--61cc-button:AddFieldToReport=
+-61cc-button:AddFieldToReport=ထည့်သွင်းရန်
 
 #__________________________=Update Contact's Access
 -ba05-button:AddPermissions=
 
 #_______________________=Add
--61cc-button:AddTemplate=
+-61cc-button:AddTemplate=ထည့်သွင်းရန်
 
 #________________________=Show all records on this server and on this computer.
 -ccf0-button:AllSummaries=
@@ -38,10 +38,10 @@
 -77df-button:Cancel=ရပ္ဆိုင္းရန္
 
 #___________________=All
--6a72-button:CaseAll=
+-6a72-button:CaseAll=အားလုံး
 
 #________________________=Received
--2754-button:CaseReceived=
+-2754-button:CaseReceived=လက်ခံရရှိပါသည်
 
 #____________________=Saved
 -c0ae-button:CaseSent=
@@ -68,7 +68,7 @@
 -ca09-button:ConnectToServer=
 
 #_______________________=Name
--709a-button:ContactName=
+-709a-button:ContactName=အမည်
 
 #_________________________=Remove
 -e963-button:ContactRemove=
@@ -83,7 +83,7 @@
 -7af7-button:ContactsSaveClose=
 
 #____________________=Continue
--2e02-button:Continue=
+-2e02-button:Continue=ဆက်ရန်
 
 #____________________=Copy
 -af74-button:CopyItem=
@@ -116,10 +116,10 @@
 -2e59-button:CustomForms=
 
 #__________________=Delete
--f6fd-button:Delete=
+-f6fd-button:Delete=ဖျက်ရန်
 
 #________________________=Delete
--f6fd-button:DeleteFolder=
+-f6fd-button:DeleteFolder=ဖျက်ရန်
 
 #____________________________=Delete from Server
 -ae3f-button:DeleteFromServer=
@@ -128,13 +128,13 @@
 -5e2f-button:DeleteSelectedGridRow=
 
 #______________________________=Delete
--f6fd-button:DeleteServerDrafts=
+-f6fd-button:DeleteServerDrafts=ဖျက်ရန်
 
 #___________________________=Don't search Trash folder
 -ef07-button:DontSearchTrash=
 
 #____________________=Download
--a479-button:Download=
+-a479-button:Download=ဒေါင်းလုဒ်
 
 #_________________________________=Show records that are only on the server.
 -f9b7-button:DownloadableSummaries=
@@ -167,7 +167,7 @@
 -3deb-button:FieldType=
 
 #_____________________________________=Add
--61cc-button:FileDialogOkAddAttachment=
+-61cc-button:FileDialogOkAddAttachment=ထည့်သွင်းရန်
 
 #_______________________________________=Import
 -d6fb-button:FileDialogOkImportBulletins=
@@ -226,9 +226,6 @@
 #______________________________=Include attachments
 -75c1-button:IncludeAttachments=
 
-#___________________________________=Include Private Data
--e6dc-button:IncludePrivateBulletins=
-
 #_____________________________=OK
 -9ce3-button:InputServerNameOk=Ok
 
@@ -257,7 +254,10 @@
 -1d19-button:NewAccountTab=
 
 #________________=Next
--bc98-button:Next=
+-bc98-button:Next=ရှေ့ဆက်ရန်
+
+#______________=OK
+-9ce3-button:OK=အိုခေ
 
 #_______________=Off
 -e3de-button:Off=
@@ -419,10 +419,10 @@
 -4bd4-button:ZipRadioButton=
 
 #_________________________=Add
--61cc-button:addattachment=
+-61cc-button:addattachment=ထည့်သွင်းရန်
 
 #___________________________=Name
--709a-button:attachmentLabel=
+-709a-button:attachmentLabel=အမည်
 
 #__________________________=Size(Kb)
 -4470-button:attachmentSize=
@@ -434,10 +434,10 @@
 -fab2-button:checkall=
 
 #_________________=Close
--bbfa-button:close=
+-bbfa-button:close=ပိတ်ရန်
 
 #____________________=Continue
--2e02-button:continue=
+-2e02-button:continue=ဆက်ရန်
 
 #__________________=Create
 -6e15-button:create=
@@ -470,7 +470,7 @@
 -9ce3-button:inputGetShareFileNameok=Ok
 
 #_________________________=Search
--bce0-button:inputsearchok=
+-bce0-button:inputsearchok=ရှာရန်
 
 #__________________=Modify
 -9fe4-button:modify=
@@ -509,13 +509,13 @@
 -efc0-button:savedraft=
 
 #__________________=Search
--bce0-button:search=
+-bce0-button:search=ရှာရန်
 
 #________________=Share
--09ca-button:send=
+-09ca-button:send=ဝေမျှရန်
 
 #_________________________=Send
--9bc2-button:shareBulletin=
+-9bc2-button:shareBulletin=ပေးပို့ရန်
 
 #______________________=Uncheck All
 -bc6d-button:uncheckall=
@@ -554,7 +554,7 @@
 -162c-field:AccountInfoPublicKey=
 
 #______________________________=Username
--f964-field:AccountInfoUserName=
+-f964-field:AccountInfoUserName=အသုံးပြုသူအမည်
 
 #_____________________________=Account Information
 -0cbd-field:AccountInformation=
@@ -608,13 +608,13 @@
 -6421-field:AdvanceServerSetupHeading=
 
 #___________________=Advanced
--4d06-field:Advanced=
+-4d06-field:Advanced=အဆင့်မြင့်
 
 #___________________________=Advanced Server Settings
 -1c4e-field:AdvancedSettings=
 
 #______________=All
--6a72-field:All=
+-6a72-field:All=အားလုံး
 
 #___________________=All Files
 -af3d-field:AllFiles=
@@ -707,7 +707,7 @@
 -191f-field:BulletinDetailsExtendedHistory=
 
 #_________________________________=History
--90cc-field:BulletinDetailsHistory=
+-90cc-field:BulletinDetailsHistory=မှတ်တမ်း
 
 #________________________________________=(in progress)
 -60dc-field:BulletinDetailsInProgressDate=
@@ -761,10 +761,10 @@
 -23a5-field:BulletinUnverifiedFieldDesk=
 
 #________________________________=Version
--2da6-field:BulletinVersionNumber=
+-2da6-field:BulletinVersionNumber=မူကွဲ
 
 #__________________________=Sent
--35f4-field:BulletinWasSent=
+-35f4-field:BulletinWasSent=ပေးပို့ပြီးပါပြီ
 
 #___________________=Calendar
 -adab-field:Calendar=
@@ -881,7 +881,7 @@
 -d2ed-field:ConnectMartusServerReasons4=
 
 #_________________________________=Connect
--b654-field:ConnectToAdvanceServer=
+-b654-field:ConnectToAdvanceServer=ချိတ်ဆက်ရန်
 
 #___________________________=Connect to Default
 -e649-field:ConnectToDefault=
@@ -917,7 +917,7 @@
 -70db-field:CreateAccountInstructions=
 
 #________________________________=Username
--f964-field:CreateAccountUserName=
+-f964-field:CreateAccountUserName=အသုံးပြုသူအမည်
 
 #__________________________________=The layout of the records is dictated by an XML document.  The document must begin with <CustomFields> and end with </CustomFields>. By default the standard record fields occur at the top of the Custom Field declaration, but they can be moved if desired.  However, there are four required fields that cannot be removed:  'author', 'entrydate', 'language' and 'title'.\n\n
 -53b4-field:CreateCustomFieldsHelp1=
@@ -1019,7 +1019,7 @@
 -6d35-field:DefaultServerHeading=
 
 #_________________=Delete
--f6fd-field:Delete=
+-f6fd-field:Delete=ဖျက်ရန်
 
 #_____________________=Delete?
 -042d-field:DeleteFlag=
@@ -1040,7 +1040,7 @@
 -4f4f-field:DoNotShowAgainThisSession=
 
 #___________________=Download
--a479-field:Download=
+-a479-field:Download=ဒေါင်းလုဒ်
 
 #______________________________________=Download from Another Martus User
 -4afb-field:DownloadFormFromAnotherUser=
@@ -1064,7 +1064,7 @@
 -79bc-field:DuplicateLabelsInCustomTemplateContinue=
 
 #_______________=Edit
--5301-field:Edit=
+-5301-field:Edit=တည်းဖြတ်ရန်
 
 #__________________________=Custom Name
 -3cb5-field:EmptyCustomName=
@@ -1126,8 +1126,8 @@
 #____________________________=Include attachments in export
 -1a48-field:ExportAttachments=
 
-#________________________________=The selected records will be exported to an XML file that you specify. All information will be saved as plain text and anyone who gets a copy of the file will be able to read its contents. These files can be used to import record data back into Martus or into another application.\n\n Please email martus@benetech.org if you need assistance.
--7373-field:ExportBulletinDetails=
+#________________________________=The selected records will be exported to an XML/CSV/JSON file that you specify. All information will be saved as plain text and anyone who gets a copy of the file will be able to read its contents. These files can be used to import record data back into Martus or into another application.\n\n Please email martus@benetech.org if you need assistance.
+-39f9-field:ExportBulletinDetails=
 
 #____________________________=Exporting encrypted Item
 -e837-field:ExportBulletinMba=
@@ -1178,7 +1178,7 @@
 -be86-field:FieldTypeGRID=
 
 #____________________________=Language
--89b8-field:FieldTypeLANGUAGE=
+-89b8-field:FieldTypeLANGUAGE=ဘာသာစကား
 
 #___________________________=Message
 -68f4-field:FieldTypeMESSAGE=
@@ -1193,7 +1193,7 @@
 -6ec9-field:FindAccountByToken=
 
 #______________________________=Name
--7aa3-field:FolderCreateNewName=
+-7aa3-field:FolderCreateNewName=အမည်
 
 #__________________________=Folder
 -30ba-field:FolderNameCases=
@@ -1312,9 +1312,6 @@
 #___________________________=Importing files
 -8f32-field:ImportingRecords=
 
-#_____________________________=#TotalBulletins# records were selected for printing.  #AllPrivateBulletins# of them are all private.\n What would you like to include when printing?
--8d5d-field:IncludePrivateData=
-
 #__________________________________=The current version of Martus cannot run with Java #HighVersion#. Please use Java #ExpectedVersion# or lower to run Martus.
 -7927-field:IncompatibleJavaVersion=
 
@@ -1346,7 +1343,7 @@
 -50c8-field:KeypairTooLarge=
 
 #________________________=Language
--9676-field:LanguageLabel=
+-9676-field:LanguageLabel=ဘာသာစကား
 
 #_______________________=Last Modified
 -4c24-field:LastModified=
@@ -1394,13 +1391,13 @@
 -5fb3-field:MyRecords=
 
 #_______________=Name
--709a-field:Name=
+-709a-field:Name=အမည်
 
 #_____________________________________=Never Delete from Server
 -27e7-field:NeverDeleteVersionOnServer=
 
 #_____________________________________=Next
--bc98-field:NewAccountWizardNextButton=
+-bc98-field:NewAccountWizardNextButton=ရှေ့ဆက်ရန်
 
 #______________________=New to Martus
 -f85d-field:NewToMartus=
@@ -1460,7 +1457,7 @@
 -b511-field:OrganizeReportFields=
 
 #___________________=Password
--0aa0-field:Password=
+-0aa0-field:Password=စကားဝှက်
 
 #______________________________________=Confirm Password*
 -9257-field:PasswordConfirmInstructions=
@@ -1544,16 +1541,16 @@
 -3775-field:RecordHistory=
 
 #___________________________________________=Both
--1f46-field:RecordLocationBothLocalAndServer=
+-1f46-field:RecordLocationBothLocalAndServer=နှစ်ဘက်လုံး
 
 #______________________________=Local
 -dc99-field:RecordLocationLocal=
 
 #_______________________________=Server
--cb0c-field:RecordLocationServer=
+-cb0c-field:RecordLocationServer=ဆာဗာ
 
 #__________________________________=Server
--cb0c-field:RecordLocationServerTab=
+-cb0c-field:RecordLocationServerTab=ဆာဗာ
 
 #________________________________=Unknown
 -bc78-field:RecordLocationUnknown=
@@ -1676,7 +1673,7 @@
 -92b6-field:SearchProgress=
 
 #_______________________=Search
--bce0-field:SearchPrompt=
+-bce0-field:SearchPrompt=ရှာရန်
 
 #_______________________=Select Fields
 -5044-field:SelectFields=
@@ -1751,7 +1748,7 @@
 -d09b-field:ServerSelectionResults=
 
 #_________________________=Settings
--c7f7-field:ServerSettings=
+-c7f7-field:ServerSettings=အပြင်အဆင်များ
 
 #______________________=Server Setup
 -3db1-field:ServerSetup=
@@ -2108,7 +2105,7 @@
 -eb05-field:_lastSavedTimestamp=
 
 #___________________=Sent
--35f4-field:_wasSent=
+-35f4-field:_wasSent=ပေးပို့ပြီးပါပြီ
 
 #____________________________=Built on:
 -179a-field:aboutDlgBuildDate=
@@ -2335,12 +2332,6 @@
 #____________________________________=Answering Yes will delete all data, uninstall Martus and exit the program.  Answering No will return you to Martus with nothing deleted.
 -b6a1-field:confirmRemoveMartuseffect=
 
-#___________________________________________=There are no records with public data. Include private data?
--e4ab-field:confirmReportIncludePrivatecause=
-
-#____________________________________________=Press 'Include Private Data' to continue with private data included, or press 'Cancel' to exit and return to Martus.
--c1bb-field:confirmReportIncludePrivateeffect=
-
 #__________________________________________=This will reset the current Default Details contents to the original contents. After resetting the contents, you should review them to be sure they are correct.
 -37bf-field:confirmResetDefaultDetailscause=
 
@@ -2507,7 +2498,7 @@
 -f530-field:keywords=အေရးပါေသာစကားလုံးအညႊန္းမ်ား
 
 #___________________=Language
--89b8-field:language=
+-89b8-field:language=ဘာသာစကား
 
 #___________________=Location
 -d219-field:location=တည္ေနရာ
@@ -2583,9 +2574,6 @@
 
 #______________________________________=The current server is not responding or may need to be configured from the server menu.
 -9b3c-field:notifyContactsNoServercause=
-
-#____________________________________________=Martus needs to keep a list of all the fields in all the records in your system.\n\nThis list does not exist, so it will be created now. This may take a few seconds per record on a slower computer.
--161a-field:notifyCreatingFieldSpecCachecause=
 
 #_____________________________________________________=An error occurred during upload, and the damaged record'#BulletinTitle#' has been moved to the Damaged Records folder.
 -9fd1-field:notifyDamagedBulletinMovedToDiscardedcause=
@@ -2866,6 +2854,9 @@
 #____________________________________________________=Preview not yet available for this record. Please wait until the information has been retrieved from the server, and then try again.
 -60d3-field:notifyRetrievePreviewNotAvailableYetcause=
 
+#_____________________________________________=The server connection is turned off, please connect to the server and try again.
+-a72d-field:notifyRetrieveServerTurnedOffcause=
+
 #________________________________________________=Errors occurred while retrieving record summaries.  Some of the records on the server will not be shown.
 -dcf0-field:notifyRetrievedOnlySomeSummariescause=
 
@@ -2987,7 +2978,7 @@
 -5192-field:organization=အဖြဲ႕အစည္း
 
 #___________________=Password
--0aa0-field:password=
+-0aa0-field:password=စကားဝှက်
 
 #________________=Phone Number
 -32d0-field:phone=
@@ -3023,7 +3014,7 @@
 -0381-field:securityServerConfigValidate=
 
 #__________________________=Server
--915e-field:serverWithColon=
+-915e-field:serverWithColon=ဆာဗာ
 
 #_________________=Status
 -bae7-field:status=
@@ -3047,7 +3038,7 @@
 -768e-field:title=ေခါင္းစဥ္
 
 #___________________=Username
--f964-field:username=
+-f964-field:username=အသုံးပြုသူအမည်
 
 #____________________________________=Loading Martus.  Please wait...
 -4d07-field:waitingForBulletinsToLoad=
@@ -3074,7 +3065,7 @@
 -e546-field:webpage=
 
 #________________=All
--6a72-folder:%All=
+-6a72-folder:%All=အားလုံး
 
 #_____________________________=Damaged Records
 -a6df-folder:%DamagedBulletins=
@@ -3371,7 +3362,7 @@
 -8221-menu:PasteBulletins=
 
 #_____________________=Preferences
--9dfd-menu:Preferences=
+-9dfd-menu:Preferences=ဦးစားပေးချက်များ
 
 #____________________________________=Delete My Data
 -07c3-menu:QuickEraseDeleteMyDataOnly=
@@ -3404,7 +3395,7 @@
 -597e-menu:ServerSettings=
 
 #__________________=Settings
--c7f7-menu:Settings=
+-c7f7-menu:Settings=အပြင်အဆင်များ
 
 #___________________________=System Preferences
 -72fd-menu:SystemPreferences=
@@ -3434,10 +3425,10 @@
 -38d1-menu:cut=
 
 #________________=Delete
--f6fd-menu:delete=
+-f6fd-menu:delete=ဖျက်ရန်
 
 #______________=Edit
--5301-menu:edit=
+-5301-menu:edit=တည်းဖြတ်ရန်
 
 #______________=Exit
 -f83b-menu:exit=ထြက္ရန္
@@ -3458,7 +3449,7 @@
 -2ae2-menu:modifyBulletin=
 
 #_________________=Options
--6bf5-menu:options=
+-6bf5-menu:options=ရွေးချယ်စရာများ
 
 #_______________=Paste
 -db24-menu:paste=
@@ -3476,7 +3467,7 @@
 -86a5-menu:selectall=
 
 #________________=Server
--cb0c-menu:server=
+-cb0c-menu:server=ဆာဗာ
 
 #_______________=Tools
 -4fa8-menu:tools=ကိရိယာမ်ား
@@ -3632,13 +3623,13 @@
 -66c9-status:sealed=
 
 #____________________=Add
--61cc-tooltip:AddCase=
+-61cc-tooltip:AddCase=ထည့်သွင်းရန်
 
 #_______________________=Add Contacts
 -325a-tooltip:AddContact=
 
 #_________________________=Settings
--c7f7-tooltip:CaseSettings=
+-c7f7-tooltip:CaseSettings=အပြင်အဆင်များ
 
 #_____________________=Copy
 -af74-tooltip:CopyItem=
@@ -3647,10 +3638,10 @@
 -9015-tooltip:CreateNewRecord=
 
 #_______________________=Delete
--f6fd-tooltip:DeleteCase=
+-f6fd-tooltip:DeleteCase=ဖျက်ရန်
 
 #_______________________=Delete
--f6fd-tooltip:DeleteItem=
+-f6fd-tooltip:DeleteItem=ဖျက်ရန်
 
 #_______________________=Empty Trash
 -cb42-tooltip:EmptyTrash=
@@ -3677,7 +3668,7 @@
 -e1e9-tooltip:NeverDeleteFromServer=
 
 #________________________=Search
--bce0-tooltip:QuickSearch=
+-bce0-tooltip:QuickSearch=ရှာရန်
 
 #______________________________________=Save the record as a local draft
 -667c-tooltip:ReadonlyDesktopFlavorSave=
@@ -3752,16 +3743,16 @@
 -a39b-wintitle:BulletinTemplate=
 
 #_____________________=All
--6a72-wintitle:CaseAll=
+-6a72-wintitle:CaseAll=အားလုံး
 
 #__________________________=Received
--2754-wintitle:CaseReceived=
+-2754-wintitle:CaseReceived=လက်ခံရရှိပါသည်
 
 #_______________________=Saved
 -c0ae-wintitle:CaseSaved=
 
 #______________________=Sent
--35f4-wintitle:CaseSent=
+-35f4-wintitle:CaseSent=ပေးပို့ပြီးပါပြီ
 
 #________________________________=Create Report
 -446e-wintitle:ChooseReportFields=
@@ -3791,7 +3782,7 @@
 -ec13-wintitle:DeleteCaseIncidentProject=
 
 #__________________________=Delete
--f6fd-wintitle:DeleteFolder=
+-f6fd-wintitle:DeleteFolder=ဖျက်ရန်
 
 #__________________________________________=Delete My Data From This Computer
 -216c-wintitle:DeleteMyDataFromThisComputer=
@@ -3924,9 +3915,6 @@
 
 #______________________________________=Import Server Response File
 -3f98-wintitle:ImportServerResponseFile=
-
-#________________________________=Include Private Data
--e6dc-wintitle:IncludePrivateData=
 
 #_____________________________________=Incompatible Java Version
 -4301-wintitle:IncompatibleJavaVersion=
@@ -4159,9 +4147,6 @@
 #_________________________________=Delete All Data and Remove Martus
 -6fef-wintitle:confirmRemoveMartus=
 
-#_________________________________________=All Data Private
--61f8-wintitle:confirmReportIncludePrivate=
-
 #________________________________________=Reset Contents
 -6f62-wintitle:confirmResetDefaultDetails=
 
@@ -4287,9 +4272,6 @@
 
 #____________________________________=Contacts Server
 -b01e-wintitle:notifyContactsNoServer=
-
-#__________________________________________=Missing List of Fields
--3ac5-wintitle:notifyCreatingFieldSpecCache=
 
 #___________________________________________________=Moved Damaged Record
 -2079-wintitle:notifyDamagedBulletinMovedToDiscarded=
@@ -4567,6 +4549,9 @@
 #__________________________________________________=Unable To Preview
 -061a-wintitle:notifyRetrievePreviewNotAvailableYet=
 
+#___________________________________________=Retrieve Records
+-a076-wintitle:notifyRetrieveServerTurnedOff=
+
 #______________________________________________=Error During Retrieve
 -f2d7-wintitle:notifyRetrievedOnlySomeSummaries=
 
@@ -4688,10 +4673,10 @@
 -2e9b-wintitle:notifyusernamessdontmatch=
 
 #_____________________=Options
--6bf5-wintitle:options=
+-6bf5-wintitle:options=ရွေးချယ်စရာများ
 
 #____________________=Search
--bce0-wintitle:search=
+-bce0-wintitle:search=ရှာရန်
 
 #__________________=Confirm Save Record
 -71ec-wintitle:send=

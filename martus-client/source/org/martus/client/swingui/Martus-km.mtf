@@ -2,8 +2,8 @@
 # Language code:  km
 # Language name:   Khmer (https://www.transifex.com/otf/teams/17076/km/)
 # Translated by:
-# Exported date:   2017-06-20 16:51:08 -0400
-# Client version:  Martus 5.2.0
+# Exported date:   2017-09-20 14:12:10 -0400
+# Client version:  Martus 6.1.0
 # Client build:
 # *** This MTF file was converted from a PO file
 
@@ -226,9 +226,6 @@
 #______________________________=Include attachments
 -75c1-button:IncludeAttachments=រួមបញ្ចូលឯកសារភ្ជាប់
 
-#___________________________________=Include Private Data
--e6dc-button:IncludePrivateBulletins=រួម​បញ្ចូល​ទិន្នន័យ​ឯកជន
-
 #_____________________________=OK
 -9ce3-button:InputServerNameOk=យល់ព្រម
 
@@ -258,6 +255,9 @@
 
 #________________=Next
 -bc98-button:Next=បន្ទាប់
+
+#______________=OK
+-9ce3-button:OK=យល់ព្រម
 
 #_______________=Off
 -e3de-button:Off=បិទ
@@ -1126,8 +1126,8 @@
 #____________________________=Include attachments in export
 -1a48-field:ExportAttachments=រួមបញ្ចូលឯកសារភ្ជាប់ក្នុងការនាំចេញ
 
-#________________________________=The selected records will be exported to an XML file that you specify. All information will be saved as plain text and anyone who gets a copy of the file will be able to read its contents. These files can be used to import record data back into Martus or into another application.\n\n Please email martus@benetech.org if you need assistance.
--7373-field:ExportBulletinDetails=កំណត់ត្រាដែលបានជ្រើសរើសនឹងត្រូវនាំចេញជា XML ដែលអ្នកបានកំណត់។ ព័ត៌មានទាំងអស់នឹងត្រូវរក្សាទុកជាអក្សរធម្មតា និងអ្នកដែលទទួលបានឯកសារចម្លង នឹងអាចអានខ្លឹមសាររបស់វាបាន។ ឯកសារទាំងនេះអាចត្រូវបានប្រើប្រាស់ ដើម្បីនាំចូលកំណត់ត្រាទិន្នន័យចូល Martus ឬចូលក្នុងកម្មវិធីកុំព្យូទ័រផ្សេងៗ។\n\nសូមផ្ញើសារទៅកាន់ martus@benetech.org ប្រសិនបើអ្នកត្រូវការជំនួយ។
+#________________________________=The selected records will be exported to an XML/CSV/JSON file that you specify. All information will be saved as plain text and anyone who gets a copy of the file will be able to read its contents. These files can be used to import record data back into Martus or into another application.\n\n Please email martus@benetech.org if you need assistance.
+-39f9-field:ExportBulletinDetails=
 
 #____________________________=Exporting encrypted Item
 -e837-field:ExportBulletinMba=កំពុងនាំចេញចំនុចអ៊ិនគ្រីប
@@ -1311,9 +1311,6 @@
 
 #___________________________=Importing files
 -8f32-field:ImportingRecords=
-
-#_____________________________=#TotalBulletins# records were selected for printing.  #AllPrivateBulletins# of them are all private.\n What would you like to include when printing?
--8d5d-field:IncludePrivateData=កំណត់ត្រា #TotalBulletins# ត្រូវបានជ្រើសរើសដើម្បីបេាះពុម្ព។  #AllPrivateBulletins# ជាឯកជន។\nតើអ្នកចង់បន្ថែមអ្វីទៀត នៅពេលបេាះពុម្ព?
 
 #__________________________________=The current version of Martus cannot run with Java #HighVersion#. Please use Java #ExpectedVersion# or lower to run Martus.
 -7927-field:IncompatibleJavaVersion=Martus ជំនាន់នេះមិនអាចដំណើរការ Java #HighVersion#។ សូមប្រើ Java #ExpectedVersion# ឬទាបជាងនេះដើម្បីដំណើរការ Martus។
@@ -2335,12 +2332,6 @@
 #____________________________________=Answering Yes will delete all data, uninstall Martus and exit the program.  Answering No will return you to Martus with nothing deleted.
 -b6a1-field:confirmRemoveMartuseffect=ឆ្លើយ យល់ព្រម នឹងលុបទិន្នន័យទាំងអស់ លុប Martus និងចាកចេញពីកម្មវិធី។ ឆ្លើយ ទេ នឹងត្រលប់ទៅ Martus និងមិនលុបអ្វីទាំងអស់។
 
-#___________________________________________=There are no records with public data. Include private data?
--e4ab-field:confirmReportIncludePrivatecause=មិនមានកំណត់ត្រាក្នុងទិន្នន័យសាធារណៈទេ។ បញ្ចូលទិន្នន័យឯកជន?
-
-#____________________________________________=Press 'Include Private Data' to continue with private data included, or press 'Cancel' to exit and return to Martus.
--c1bb-field:confirmReportIncludePrivateeffect=ចុច 'បញ្ចូលទិន្នន័យឯកជន' ដើម្បីបន្តបញ្ចូលទិន្នន័យឯកជន ឬ ចុច 'បោះបង់' ដើម្បីចាកចេញ និងត្រលប់ទៅកាន់ Martus.
-
 #__________________________________________=This will reset the current Default Details contents to the original contents. After resetting the contents, you should review them to be sure they are correct.
 -37bf-field:confirmResetDefaultDetailscause=នេះនឹងកំណត់ខ្លឹមសារលំនាំដើមឡើងវិញ ទៅជាខ្លឹមសារដើម។ បន្ទាប់ពីកំណត់ខ្លឹមសារ អ្នកគួរពិនិត្យមើល ដើម្បីបញ្ជាក់ថាវាត្រឹមត្រូវ។
 
@@ -2583,9 +2574,6 @@
 
 #______________________________________=The current server is not responding or may need to be configured from the server menu.
 -9b3c-field:notifyContactsNoServercause=ម៉ាស៊ីនមេនេះមិនដំណើរការ ឬត្រូវការកំណត់ពីបញ្ជីម៉ាស៊ីនមេ។ 
-
-#____________________________________________=Martus needs to keep a list of all the fields in all the records in your system.\n\nThis list does not exist, so it will be created now. This may take a few seconds per record on a slower computer.
--161a-field:notifyCreatingFieldSpecCachecause=Martus ត្រូវការរក្សាទុកបញ្ជីវាលទំាងអស់ក្នុងកំណត់ត្រាដែលមានក្នុងប្រព័ន្ធរបស់អ្នក។\n\nបញ្ជីនេះមិនមានស្រាប់ទេ វានឹងត្រូវបង្កើតឡើងឥលូវនេះ។ វាអាចចំណាយពេលប៉ុន្មានវិនាទីក្នុង១កំណត់ត្រា លើម៉ាស៊ីនកំុព្យូទ័រយឺត។
 
 #_____________________________________________________=An error occurred during upload, and the damaged record'#BulletinTitle#' has been moved to the Damaged Records folder.
 -9fd1-field:notifyDamagedBulletinMovedToDiscardedcause=បញ្ហាកើតឡើងពេលកំពុងបញ្ជូន និងកំណត់ត្រាខូចខាត '#BulletinTitle#' ត្រូវបានផ្លាស់ប្តូរទៅថតកំណត់ត្រាខូចខាត។
@@ -2865,6 +2853,9 @@
 
 #____________________________________________________=Preview not yet available for this record. Please wait until the information has been retrieved from the server, and then try again.
 -60d3-field:notifyRetrievePreviewNotAvailableYetcause=ការមើលមុខមិនទាន់មានសម្រាប់កំណត់ត្រានេះទេ។ សូមរង់ចាំរហូតដល់ព័ត៌មានត្រូវបានទាញចេញពីម៉ាស៊ីនមេ និងសាកល្បងម្តងទៀត។
+
+#_____________________________________________=The server connection is turned off, please connect to the server and try again.
+-a72d-field:notifyRetrieveServerTurnedOffcause=
 
 #________________________________________________=Errors occurred while retrieving record summaries.  Some of the records on the server will not be shown.
 -dcf0-field:notifyRetrievedOnlySomeSummariescause=បញ្ហាកើតឡើងនៅពេលទាញយកកំណត់ត្រាសង្ខេប។ កំណត់ត្រាមួយចំនួនលើម៉ាស៊ីនមេ នឹងមិនត្រូវបានបង្ហាញទេ។
@@ -3925,9 +3916,6 @@
 #______________________________________=Import Server Response File
 -3f98-wintitle:ImportServerResponseFile=
 
-#________________________________=Include Private Data
--e6dc-wintitle:IncludePrivateData=រួម​បញ្ចូល​ទិន្នន័យ​ឯកជន
-
 #_____________________________________=Incompatible Java Version
 -4301-wintitle:IncompatibleJavaVersion=កំណែ Java មិនស្គាល់គ្នា
 
@@ -4159,9 +4147,6 @@
 #_________________________________=Delete All Data and Remove Martus
 -6fef-wintitle:confirmRemoveMartus=លុបចោលទិន្នន័យទាំងអស់ និងលុបចោល Martus
 
-#_________________________________________=All Data Private
--61f8-wintitle:confirmReportIncludePrivate=ទិន្នន័យឯកជនទាំងអស់
-
 #________________________________________=Reset Contents
 -6f62-wintitle:confirmResetDefaultDetails=កំណត់មាតិកា​ឡើងវិញ
 
@@ -4287,9 +4272,6 @@
 
 #____________________________________=Contacts Server
 -b01e-wintitle:notifyContactsNoServer=ម៉ាស៊ីនមេទំនាក់ទំនង
-
-#__________________________________________=Missing List of Fields
--3ac5-wintitle:notifyCreatingFieldSpecCache=វាលបញ្ជីរកមិនឃើញ
 
 #___________________________________________________=Moved Damaged Record
 -2079-wintitle:notifyDamagedBulletinMovedToDiscarded=ផ្លាស់ទីកំណត់ត្រាខូចខាត
@@ -4566,6 +4548,9 @@
 
 #__________________________________________________=Unable To Preview
 -061a-wintitle:notifyRetrievePreviewNotAvailableYet=មិនអាចបើកមើលជាមុន
+
+#___________________________________________=Retrieve Records
+-a076-wintitle:notifyRetrieveServerTurnedOff=ទាញយកកំណត់ត្រា 
 
 #______________________________________________=Error During Retrieve
 -f2d7-wintitle:notifyRetrievedOnlySomeSummaries=បញ្ហាពេលទាញយក

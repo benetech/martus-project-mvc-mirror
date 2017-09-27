@@ -2,8 +2,8 @@
 # Language code:  es
 # Language name:   Spanish (https://www.transifex.com/otf/teams/17076/es/)
 # Translated by:
-# Exported date:   2017-06-20 16:51:08 -0400
-# Client version:  Martus 5.2.0
+# Exported date:   2017-09-20 14:12:10 -0400
+# Client version:  Martus 6.1.0
 # Client build:
 # *** This MTF file was converted from a PO file
 
@@ -149,7 +149,7 @@
 -629e-button:ExportAsCsv=Exportar como CSV
 
 #__________________________=Export Multi-Part Key
--cbf6-button:ExportMultiKey=Exportar par de claves en múltiples-partes
+-cbf6-button:ExportMultiKey=Exportar clave multi-parte
 
 #___________________________=Export My Public Key
 -5b90-button:ExportPublicKey=Exportar mi clave pública
@@ -218,16 +218,13 @@
 -c47a-button:Help=Ayuda
 
 #_________________________________=Choose File
--54a2-button:ImportContactFromFile=Elija el archivo
+-54a2-button:ImportContactFromFile=Elegir Archivo
 
 #__________________________=Import From File
 -85a7-button:ImportFromFile=Importar desde archivo
 
 #______________________________=Include attachments
 -75c1-button:IncludeAttachments=Incluir adjuntos
-
-#___________________________________=Include Private Data
--e6dc-button:IncludePrivateBulletins=Incluir información privada
 
 #_____________________________=OK
 -9ce3-button:InputServerNameOk=Aceptar
@@ -258,6 +255,9 @@
 
 #________________=Next
 -bc98-button:Next=Siguiente
+
+#______________=OK
+-9ce3-button:OK=OK
 
 #_______________=Off
 -e3de-button:Off=No
@@ -335,7 +335,7 @@
 -b2e8-button:SearchFinalBulletinsOnly=Buscar sólo la versión más reciente de los expedientes
 
 #______________________________=Match multi-item list details in search screen to a single item (Click \"Help\" to learn more)
--28ea-button:SearchSameRowsOnly=
+-28ea-button:SearchSameRowsOnly=Satisfacer todos los detalles de la búsqueda sobre lista de múltiples-elementos para cada elemento individual (pulse \"Ayuda\" para conocer más)
 
 #____________________=See Forms
 -fac4-button:SeeForms=Ver plantillas
@@ -347,7 +347,7 @@
 -8598-button:SelectReport=Seleccionar
 
 #___________________________=Send by Default
--560d-button:SendToByDefault=
+-560d-button:SendToByDefault=Enviar por defecto 
 
 #__________________________________=Accept
 -bb54-button:ServerComplianceAccept=Aceptar
@@ -416,7 +416,7 @@
 -3c2c-button:YesCopyWithUnknownContent=Sí, copie lo que pueda encima
 
 #__________________________=Uploadable Zip
--4bd4-button:ZipRadioButton=Zip subible
+-4bd4-button:ZipRadioButton=Zip para el Respaldador
 
 #_________________________=Add
 -61cc-button:addattachment=Añadir
@@ -569,16 +569,16 @@
 -70e8-field:AddContactInstructions=Para enviar información a través de Martus a alguno de sus contactos, obtenga la clave pública del contacto desde el servidor Martus usando la credencial de acceso de este. Verifique que ha obtenido la clave correcta comprobando el código público de la clave del contacto. Pida a sus contactos sus credenciales de acceso y códigos públicos para añadirlos aquí. Si no tiene esta información ahora, podrá añadir contactos más tarde.
 
 #_____________________________________=1. Ask your contacts for their \"Access Token\"
--d4a6-field:AddContactStep1AccessToken=1. Pregunte a sus contactos por su "Token de acceso"
+-d4a6-field:AddContactStep1AccessToken=1.  Pidele a su contacto su credencial de acceso
 
 #___________________________________=1. Ask your contacts for their \"Public Key\"
--0bf9-field:AddContactStep1PublicKey=1. Pregunte a sus contactos por su "clave pública"
+-0bf9-field:AddContactStep1PublicKey=1.  Pidele a su contacto la clave pública de su cuenta
 
 #__________________________=2. Communicate in person or over an encrypted phone conversation. If that is not possible, use encrypted email
--b88d-field:AddContactStep2=2. Comuníquese en persona o durante una conversación telefónica cifrada. Si eso no es posible, utilice correo electrónico cifrado
+-b88d-field:AddContactStep2=2. Communique en persona o sobre llamada cifrada. Si no es posible, use correo cifrado.
 
 #__________________________=3. Verify Public Code after adding contact, ideally over phone/in person
--e6b5-field:AddContactStep3=3. Verificar el código público después de agregar el contacto, idealmente por teléfono / en persona
+-e6b5-field:AddContactStep3=3. Verificar la código público despues de anadir el contacto, idealmente por telefono o en persona
 
 #______________________=Contacts
 -b0dd-field:AddContacts=Contactos
@@ -890,7 +890,7 @@
 -7e13-field:ConnectingToServerToRetrieveToken=Intentando conectar al servidor y descargar la credencial de usted.
 
 #_____________________________=Contact's Access Token
--76d0-field:ContactAccessToken=
+-76d0-field:ContactAccessToken=Credencial de acceso del contacto
 
 #_________________________________=This contact currently has the name: '#Name#'
 -cbc4-field:ContactAlreadyExistsAs=Actualmente este contacto tiene el nombre: '#Name#'
@@ -1126,8 +1126,8 @@
 #____________________________=Include attachments in export
 -1a48-field:ExportAttachments=Incluir archivos adjuntos al exportar
 
-#________________________________=The selected records will be exported to an XML file that you specify. All information will be saved as plain text and anyone who gets a copy of the file will be able to read its contents. These files can be used to import record data back into Martus or into another application.\n\n Please email martus@benetech.org if you need assistance.
--7373-field:ExportBulletinDetails=Los expedientes seleccionados se exportarán a un archivo XML que usted especifique. Toda la información se guardará como texto sin cifrar y cualquiera que obtenga una copia del archivo podrá leer su contenido. Estos archivos se pueden usar para importar datos de expedientes de vuelta a Martus o a otra aplicación.\n\nPor favor, envíe un correo a martus@benetech.org si necesita asistencia.
+#________________________________=The selected records will be exported to an XML/CSV/JSON file that you specify. All information will be saved as plain text and anyone who gets a copy of the file will be able to read its contents. These files can be used to import record data back into Martus or into another application.\n\n Please email martus@benetech.org if you need assistance.
+-39f9-field:ExportBulletinDetails=Los expedientes seleccionados se exportarán al archivo XML/CSV/JSON que especifique. Toda la información se guardará como texto sin cifrar y cualquiera que obtenga una copia del archivo podrá leer su contenido. Estos archivos pueden usuarse para importar datos de expedientes de vuelta a Martus o a otra aplicación.\n\nPor favor envíe un correo a martus@benetech.org si necesita asistencia.
 
 #____________________________=Exporting encrypted Item
 -e837-field:ExportBulletinMba=Exportando elemento cifrado
@@ -1142,7 +1142,7 @@
 -c373-field:ExportProgress=Exportando
 
 #________________________________=Exporting uploadable zip
--d906-field:ExportZippedBulletins=Exportar zip subible
+-d906-field:ExportZippedBulletins=Exportar zip para el Respaldador
 
 #____________________________=Exported Records
 -77b2-field:ExportedBulletins=Expedientes exportados
@@ -1312,9 +1312,6 @@
 #___________________________=Importing files
 -8f32-field:ImportingRecords=Importar archivos
 
-#_____________________________=#TotalBulletins# records were selected for printing.  #AllPrivateBulletins# of them are all private.\n What would you like to include when printing?
--8d5d-field:IncludePrivateData=Se seleccionaron #TotalBulletins# expedientes para imprimir. #AllPrivateBulletins# de ellos son completamente privados.\n¿Qué desea que se incluya al imprimir?
-
 #__________________________________=The current version of Martus cannot run with Java #HighVersion#. Please use Java #ExpectedVersion# or lower to run Martus.
 -7927-field:IncompatibleJavaVersion=La versión actual de Martus no puede ejecutarse con Java #HighVersion#. Por favor, use Java #ExpectedVersion# o inferior para ejecutar Martus.
 
@@ -1388,7 +1385,7 @@
 -00a9-field:MayBeDamaged=Advertencia: Algunas partes pueden estar dañadas o perdidas.
 
 #________________________=My Access Token:
--d92a-field:MyAccessToken=Mi token de acceso:
+-d92a-field:MyAccessToken=Mi credencial de acceso 
 
 #____________________=My Records
 -5fb3-field:MyRecords=Mis expedientes
@@ -2335,12 +2332,6 @@
 #____________________________________=Answering Yes will delete all data, uninstall Martus and exit the program.  Answering No will return you to Martus with nothing deleted.
 -b6a1-field:confirmRemoveMartuseffect=Pulse Sí para eliminar toda la información, desinstalar Martus y salir del programa. Pulsando No regresará a Martus sin eliminar nada.
 
-#___________________________________________=There are no records with public data. Include private data?
--e4ab-field:confirmReportIncludePrivatecause=No hay expedientes con datos públicos. ¿Incluir datos privados?
-
-#____________________________________________=Press 'Include Private Data' to continue with private data included, or press 'Cancel' to exit and return to Martus.
--c1bb-field:confirmReportIncludePrivateeffect=Pulse 'Incluir información privada' para continuar con los datos privados incluidos, o pulse 'Cancelar' para salir y regresar a Martus.
-
 #__________________________________________=This will reset the current Default Details contents to the original contents. After resetting the contents, you should review them to be sure they are correct.
 -37bf-field:confirmResetDefaultDetailscause=Esta acción restablecerá los contenidos de los detalles predeterminados a sus valores originales. Compruebe los contenidos después de restablecerlos para asegurarse de que sean correctos.
 
@@ -2583,9 +2574,6 @@
 
 #______________________________________=The current server is not responding or may need to be configured from the server menu.
 -9b3c-field:notifyContactsNoServercause=El servidor actual no está respondiendo, o puede que tenga que ser configurado a través del menú de servidor.
-
-#____________________________________________=Martus needs to keep a list of all the fields in all the records in your system.\n\nThis list does not exist, so it will be created now. This may take a few seconds per record on a slower computer.
--161a-field:notifyCreatingFieldSpecCachecause=Martus necesita mantener una lista de todos los campos en todos los expedientes de su sistema.\n\nEsta lista no existe, así que se creará ahora. Esto puede llevar unos pocos segundos por expediente en una computadora lenta.
 
 #_____________________________________________________=An error occurred during upload, and the damaged record'#BulletinTitle#' has been moved to the Damaged Records folder.
 -9fd1-field:notifyDamagedBulletinMovedToDiscardedcause=Ocurrió un error durante la subida, y el expediente dañado '#BulletinTitle#' ha sido eliminado de la carpeta de Expedientes Dañados.
@@ -2865,6 +2853,9 @@
 
 #____________________________________________________=Preview not yet available for this record. Please wait until the information has been retrieved from the server, and then try again.
 -60d3-field:notifyRetrievePreviewNotAvailableYetcause=La vista previa aún no está disponible para este expediente. Por favor, espere hasta que la información haya sido descargada del servidor, y luego inténtelo otra vez.
+
+#_____________________________________________=The server connection is turned off, please connect to the server and try again.
+-a72d-field:notifyRetrieveServerTurnedOffcause=La conexión del servidor está desactivada, por favor, conecte con el servidor y pruebe de nuevo.
 
 #________________________________________________=Errors occurred while retrieving record summaries.  Some of the records on the server will not be shown.
 -dcf0-field:notifyRetrievedOnlySomeSummariescause=Ocurrieron errores al descargar resúmenes de expedientes. Algunos de los expedientes en el servidor no se mostrarán.
@@ -3925,9 +3916,6 @@
 #______________________________________=Import Server Response File
 -3f98-wintitle:ImportServerResponseFile=Importar archivo de respuesta del servidor
 
-#________________________________=Include Private Data
--e6dc-wintitle:IncludePrivateData=Incluir información privada
-
 #_____________________________________=Incompatible Java Version
 -4301-wintitle:IncompatibleJavaVersion=Versión de Java incompatible
 
@@ -4159,9 +4147,6 @@
 #_________________________________=Delete All Data and Remove Martus
 -6fef-wintitle:confirmRemoveMartus=Borrar toda la información y eliminar Martus
 
-#_________________________________________=All Data Private
--61f8-wintitle:confirmReportIncludePrivate=Toda la información es privada
-
 #________________________________________=Reset Contents
 -6f62-wintitle:confirmResetDefaultDetails=Restablecer contenidos por defecto
 
@@ -4287,9 +4272,6 @@
 
 #____________________________________=Contacts Server
 -b01e-wintitle:notifyContactsNoServer=Servidor para los contactos
-
-#__________________________________________=Missing List of Fields
--3ac5-wintitle:notifyCreatingFieldSpecCache=Lista de campos ausente
 
 #___________________________________________________=Moved Damaged Record
 -2079-wintitle:notifyDamagedBulletinMovedToDiscarded=Expediente dañado movido
@@ -4566,6 +4548,9 @@
 
 #__________________________________________________=Unable To Preview
 -061a-wintitle:notifyRetrievePreviewNotAvailableYet=No se pudo previsualizar
+
+#___________________________________________=Retrieve Records
+-a076-wintitle:notifyRetrieveServerTurnedOff=Descargar expedientes
 
 #______________________________________________=Error During Retrieve
 -f2d7-wintitle:notifyRetrievedOnlySomeSummaries=Error al descargar expedientes

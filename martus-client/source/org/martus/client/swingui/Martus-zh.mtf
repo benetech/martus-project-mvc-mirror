@@ -2,8 +2,8 @@
 # Language code:  zh
 # Language name:   Chinese (https://www.transifex.com/otf/teams/17076/zh/)
 # Translated by:
-# Exported date:   2017-06-20 16:51:08 -0400
-# Client version:  Martus 5.2.0
+# Exported date:   2017-09-20 14:12:10 -0400
+# Client version:  Martus 6.1.0
 # Client build:
 # *** This MTF file was converted from a PO file
 
@@ -226,9 +226,6 @@
 #______________________________=Include attachments
 -75c1-button:IncludeAttachments=包含附件
 
-#___________________________________=Include Private Data
--e6dc-button:IncludePrivateBulletins=包括隐私数据
-
 #_____________________________=OK
 -9ce3-button:InputServerNameOk=是
 
@@ -258,6 +255,9 @@
 
 #________________=Next
 -bc98-button:Next=下一步
+
+#______________=OK
+-9ce3-button:OK=是
 
 #_______________=Off
 -e3de-button:Off=关闭
@@ -1126,8 +1126,8 @@
 #____________________________=Include attachments in export
 -1a48-field:ExportAttachments=导出数据中包含附件
 
-#________________________________=The selected records will be exported to an XML file that you specify. All information will be saved as plain text and anyone who gets a copy of the file will be able to read its contents. These files can be used to import record data back into Martus or into another application.\n\n Please email martus@benetech.org if you need assistance.
--7373-field:ExportBulletinDetails=1
+#________________________________=The selected records will be exported to an XML/CSV/JSON file that you specify. All information will be saved as plain text and anyone who gets a copy of the file will be able to read its contents. These files can be used to import record data back into Martus or into another application.\n\n Please email martus@benetech.org if you need assistance.
+-39f9-field:ExportBulletinDetails=
 
 #____________________________=Exporting encrypted Item
 -e837-field:ExportBulletinMba=导出已加密项目
@@ -1311,9 +1311,6 @@
 
 #___________________________=Importing files
 -8f32-field:ImportingRecords=
-
-#_____________________________=#TotalBulletins# records were selected for printing.  #AllPrivateBulletins# of them are all private.\n What would you like to include when printing?
--8d5d-field:IncludePrivateData=#TotalBulletins# 公告已选择打印 #AllPrivateBulletins# 部分公告包含隐私内容。 你确定要把这部分隐私内容打印吗？
 
 #__________________________________=The current version of Martus cannot run with Java #HighVersion#. Please use Java #ExpectedVersion# or lower to run Martus.
 -7927-field:IncompatibleJavaVersion=当前的Martus版本无法使用这个#HighVersion#的Java版本中运行。请使用#ExpectedVersion#或更低版本的Jave来运行Martus系统。
@@ -2335,12 +2332,6 @@
 #____________________________________=Answering Yes will delete all data, uninstall Martus and exit the program.  Answering No will return you to Martus with nothing deleted.
 -b6a1-field:confirmRemoveMartuseffect=回答”是“将会删除所有数据，卸载Martus系统并退出程序。答”否“则不会删除任何数据并返回到Martus系统。
 
-#___________________________________________=There are no records with public data. Include private data?
--e4ab-field:confirmReportIncludePrivatecause=没有公告有公开数据，是否连隐私数据也计算在内？
-
-#____________________________________________=Press 'Include Private Data' to continue with private data included, or press 'Cancel' to exit and return to Martus.
--c1bb-field:confirmReportIncludePrivateeffect=点击\"包括隐私数据\"选项以继续，或者点击“取消”以退出并返回Martus系统。
-
 #__________________________________________=This will reset the current Default Details contents to the original contents. After resetting the contents, you should review them to be sure they are correct.
 -37bf-field:confirmResetDefaultDetailscause=将当前的默认细节内容重置为原始内容。重置内容完成后，你应该复查确定下它们是否正确。
 
@@ -2583,9 +2574,6 @@
 
 #______________________________________=The current server is not responding or may need to be configured from the server menu.
 -9b3c-field:notifyContactsNoServercause=当前服务器无响应，或者你可能需要从服务器菜单中进行配置。
-
-#____________________________________________=Martus needs to keep a list of all the fields in all the records in your system.\n\nThis list does not exist, so it will be created now. This may take a few seconds per record on a slower computer.
--161a-field:notifyCreatingFieldSpecCachecause=Martus需要保存一个你的系统中所有公告的所有字段列表。这个列表尚未存在，因此需要现在创建它。在较缓慢的电脑上可能需要每个公告消耗数秒的时间。
 
 #_____________________________________________________=An error occurred during upload, and the damaged record'#BulletinTitle#' has been moved to the Damaged Records folder.
 -9fd1-field:notifyDamagedBulletinMovedToDiscardedcause=上传时发生错误，并且损坏了公告'，而＃BulletinTitle＃'已被转移到损坏公告文件夹。
@@ -2865,6 +2853,9 @@
 
 #____________________________________________________=Preview not yet available for this record. Please wait until the information has been retrieved from the server, and then try again.
 -60d3-field:notifyRetrievePreviewNotAvailableYetcause=此公告現在不能预览。请等待信息从服务器上取回后再尝试。
+
+#_____________________________________________=The server connection is turned off, please connect to the server and try again.
+-a72d-field:notifyRetrieveServerTurnedOffcause=
 
 #________________________________________________=Errors occurred while retrieving record summaries.  Some of the records on the server will not be shown.
 -dcf0-field:notifyRetrievedOnlySomeSummariescause=取回公告概述时出错。服务器上的一些公告不能被显示。
@@ -3925,9 +3916,6 @@
 #______________________________________=Import Server Response File
 -3f98-wintitle:ImportServerResponseFile=
 
-#________________________________=Include Private Data
--e6dc-wintitle:IncludePrivateData=包括隐私数据
-
 #_____________________________________=Incompatible Java Version
 -4301-wintitle:IncompatibleJavaVersion=JAVA版本不兼容
 
@@ -4159,9 +4147,6 @@
 #_________________________________=Delete All Data and Remove Martus
 -6fef-wintitle:confirmRemoveMartus=删除所有数据并移除Martus系统
 
-#_________________________________________=All Data Private
--61f8-wintitle:confirmReportIncludePrivate=所有数据隐私保密
-
 #________________________________________=Reset Contents
 -6f62-wintitle:confirmResetDefaultDetails=重置内容
 
@@ -4287,9 +4272,6 @@
 
 #____________________________________=Contacts Server
 -b01e-wintitle:notifyContactsNoServer=联系人服务器
-
-#__________________________________________=Missing List of Fields
--3ac5-wintitle:notifyCreatingFieldSpecCache=字段列表丢失
 
 #___________________________________________________=Moved Damaged Record
 -2079-wintitle:notifyDamagedBulletinMovedToDiscarded=已移动损坏的公告
@@ -4566,6 +4548,9 @@
 
 #__________________________________________________=Unable To Preview
 -061a-wintitle:notifyRetrievePreviewNotAvailableYet=无法预览
+
+#___________________________________________=Retrieve Records
+-a076-wintitle:notifyRetrieveServerTurnedOff=从服务器取回一个公告
 
 #______________________________________________=Error During Retrieve
 -f2d7-wintitle:notifyRetrievedOnlySomeSummaries=取回进程出错

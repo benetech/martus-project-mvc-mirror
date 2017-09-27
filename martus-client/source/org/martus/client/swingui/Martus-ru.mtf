@@ -2,8 +2,8 @@
 # Language code:  ru
 # Language name:   Russian (https://www.transifex.com/otf/teams/17076/ru/)
 # Translated by:
-# Exported date:   2017-06-20 16:51:08 -0400
-# Client version:  Martus 5.2.0
+# Exported date:   2017-09-20 14:12:10 -0400
+# Client version:  Martus 6.1.0
 # Client build:
 # *** This MTF file was converted from a PO file
 
@@ -59,13 +59,13 @@
 -8624-button:CloseHelp=Закрыть справку
 
 #________________________=Connect Later
--7943-button:ConnectLater=Подключиться позже
+-7943-button:ConnectLater=Подключиться позднее
 
 #______________________=Connect Now
 -8dbd-button:ConnectNow=Подключиться сейчас
 
 #___________________________=Connect to Server
--ca09-button:ConnectToServer=Подключение к серверу 
+-ca09-button:ConnectToServer=Подключиться к серверу 
 
 #_______________________=Name
 -709a-button:ContactName=Имя
@@ -98,7 +98,7 @@
 -6e15-button:CreateFolder=Создать
 
 #____________________________=Create a new Martus account
--dae0-button:CreateNewAccount=Создайте новую учетную запись Martus
+-dae0-button:CreateNewAccount=Создать новую учетную запись Martus
 
 #____________________________=Create New Page Report
 -1d7a-button:CreatePageReport=Создать новый текстовый отчет
@@ -110,7 +110,7 @@
 -34ee-button:CreateTabularReport=Создать новый табличный отчет
 
 #__________________________=CSV
--3281-button:CsvRadioButton=
+-3281-button:CsvRadioButton=CSV
 
 #_______________________=Download Custom Template
 -2e59-button:CustomForms=Загрузить пользовательский шаблон
@@ -131,7 +131,7 @@
 -f6fd-button:DeleteServerDrafts=Удалить
 
 #___________________________=Don't search Trash folder
--ef07-button:DontSearchTrash=
+-ef07-button:DontSearchTrash=Не искать в корзине
 
 #____________________=Download
 -a479-button:Download=Загрузить
@@ -152,7 +152,7 @@
 -cbf6-button:ExportMultiKey=Экспорт составного ключа
 
 #___________________________=Export My Public Key
--5b90-button:ExportPublicKey=Экспорт моего открытого ключа
+-5b90-button:ExportPublicKey=
 
 #____________________=Send To
 -d11f-button:ExportTo=Отправить
@@ -218,16 +218,13 @@
 -c47a-button:Help=Помощь
 
 #_________________________________=Choose File
--54a2-button:ImportContactFromFile=Выберите файл
+-54a2-button:ImportContactFromFile=
 
 #__________________________=Import From File
 -85a7-button:ImportFromFile=Импорт из файла
 
 #______________________________=Include attachments
 -75c1-button:IncludeAttachments=Учитывать вложенные файлы
-
-#___________________________________=Include Private Data
--e6dc-button:IncludePrivateBulletins=Включить конфиденциальные данные
 
 #_____________________________=OK
 -9ce3-button:InputServerNameOk=OK
@@ -258,6 +255,9 @@
 
 #________________=Next
 -bc98-button:Next=Далее
+
+#______________=OK
+-9ce3-button:OK=OK
 
 #_______________=Off
 -e3de-button:Off=Выкл
@@ -608,7 +608,7 @@
 -6421-field:AdvanceServerSetupHeading=Дополнительные настройки сервера 
 
 #___________________=Advanced
--4d06-field:Advanced=
+-4d06-field:Advanced=Расширенные настройки
 
 #___________________________=Advanced Server Settings
 -1c4e-field:AdvancedSettings=Расширенные настройки сервера 
@@ -1126,8 +1126,8 @@
 #____________________________=Include attachments in export
 -1a48-field:ExportAttachments=Экспортировать также вложения
 
-#________________________________=The selected records will be exported to an XML file that you specify. All information will be saved as plain text and anyone who gets a copy of the file will be able to read its contents. These files can be used to import record data back into Martus or into another application.\n\n Please email martus@benetech.org if you need assistance.
--7373-field:ExportBulletinDetails=Выбранные записи будут экспортированы в XML файл, который вы укажете. Вся информация будет сохранена в виде простого текста и все те, кто получат копию файла смогут прочитать его содержимое.Эти файлы могут быть использованы для импорта записанных данных обратно в Martus или в другое приложение. \n\nПожалуйста, напишите martus@benetech.org если вам нужна помощь.
+#________________________________=The selected records will be exported to an XML/CSV/JSON file that you specify. All information will be saved as plain text and anyone who gets a copy of the file will be able to read its contents. These files can be used to import record data back into Martus or into another application.\n\n Please email martus@benetech.org if you need assistance.
+-39f9-field:ExportBulletinDetails=
 
 #____________________________=Exporting encrypted Item
 -e837-field:ExportBulletinMba=Экспортируется шифрованный элемент
@@ -1301,7 +1301,7 @@
 -90ab-field:ImportProgress=Импортируется
 
 #__________________________=Import Public Key
--500e-field:ImportPublicKey=Импорт открытого ключа
+-500e-field:ImportPublicKey=
 
 #_______________________________=This template currently does not have a name.  Enter a new title for this template.
 -7f51-field:ImportTemplateNoName=Этот шаблон в настоящее время не имеет названия. Введите новое название для этого шаблона.
@@ -1311,9 +1311,6 @@
 
 #___________________________=Importing files
 -8f32-field:ImportingRecords=
-
-#_____________________________=#TotalBulletins# records were selected for printing.  #AllPrivateBulletins# of them are all private.\n What would you like to include when printing?
--8d5d-field:IncludePrivateData=#TotalBulletins# записей было выбрано для печати. #AllPrivateBulletins# из них конфиденциальные.\nЧто бы вы хотели учесть при печати? 
 
 #__________________________________=The current version of Martus cannot run with Java #HighVersion#. Please use Java #ExpectedVersion# or lower to run Martus.
 -7927-field:IncompatibleJavaVersion=Текущая версия Martus не может работать с Java #HighVersion#. Пожалуйста, используйте Java #ExpectedVersion# или ниже, чтобы запустить Martus.
@@ -1388,7 +1385,7 @@
 -00a9-field:MayBeDamaged=Предупреждение: Части могут быть утрачены или повреждены
 
 #________________________=My Access Token:
--d92a-field:MyAccessToken=Мой токен доступа:
+-d92a-field:MyAccessToken=
 
 #____________________=My Records
 -5fb3-field:MyRecords=Мои записи
@@ -1403,7 +1400,7 @@
 -bc98-field:NewAccountWizardNextButton=Далее
 
 #______________________=New to Martus
--f85d-field:NewToMartus=Новое в Martus
+-f85d-field:NewToMartus=
 
 #_____________________________=No Records.
 -aea7-field:NoBulletinsInTable=Нет записей.
@@ -1943,7 +1940,7 @@
 -9894-field:UseDefaultServer=Использовать сервер по умолчанию
 
 #___________________________=Use Private Server
--11c2-field:UsePrivateServer=Использовать частный сервер
+-11c2-field:UsePrivateServer=
 
 #_________________=Use Tor
 -bc93-field:UseTor=Использовать Tor
@@ -2335,12 +2332,6 @@
 #____________________________________=Answering Yes will delete all data, uninstall Martus and exit the program.  Answering No will return you to Martus with nothing deleted.
 -b6a1-field:confirmRemoveMartuseffect=Нажатие Да удалит все данные, завершит работу программы и выполнит удаление Martus. Нажатие Нет вернёт вас в Martus без удаления какой-либо информации.
 
-#___________________________________________=There are no records with public data. Include private data?
--e4ab-field:confirmReportIncludePrivatecause=Записи с общедоступными данными отсутствуют. Включить конфиденциальные данные?
-
-#____________________________________________=Press 'Include Private Data' to continue with private data included, or press 'Cancel' to exit and return to Martus.
--c1bb-field:confirmReportIncludePrivateeffect=Нажмите 'Включить конфиденциальные данные' для продолжения работы с конфиденциальными данными или 'Отмена' для прекращения работы и возврата в Martus.
-
 #__________________________________________=This will reset the current Default Details contents to the original contents. After resetting the contents, you should review them to be sure they are correct.
 -37bf-field:confirmResetDefaultDetailscause=Это приведет к сбросу Описания по-умолчанию к исходному содержанию.  После сброса данных необходимо просмотреть их повторно, чтобы убедиться в их корректности.
 
@@ -2583,9 +2574,6 @@
 
 #______________________________________=The current server is not responding or may need to be configured from the server menu.
 -9b3c-field:notifyContactsNoServercause=Текущий сервер не отвечает, проверьте настройки в меню сервера.
-
-#____________________________________________=Martus needs to keep a list of all the fields in all the records in your system.\n\nThis list does not exist, so it will be created now. This may take a few seconds per record on a slower computer.
--161a-field:notifyCreatingFieldSpecCachecause=Программе Martus требуется сохранить список всех полей во всех записях, имеющихся в вашей системе.\n\nСоответствующий список отсутствует, так что он будет создан сейчас. На слабых компьютерах этот процесс может потребовать несколько секунд на каждую запись.
 
 #_____________________________________________________=An error occurred during upload, and the damaged record'#BulletinTitle#' has been moved to the Damaged Records folder.
 -9fd1-field:notifyDamagedBulletinMovedToDiscardedcause=Произошла ошибка отправки записи. Повреждённая запись \"# BulletinTitle#' была перемещена в папку с поврежденными записями.
@@ -2865,6 +2853,9 @@
 
 #____________________________________________________=Preview not yet available for this record. Please wait until the information has been retrieved from the server, and then try again.
 -60d3-field:notifyRetrievePreviewNotAvailableYetcause=Предварительный просмотр данной записи сейчас невозможен. Подождите, пока информация полностью загрузится с сервера, после чего повторите попытку.
+
+#_____________________________________________=The server connection is turned off, please connect to the server and try again.
+-a72d-field:notifyRetrieveServerTurnedOffcause=
 
 #________________________________________________=Errors occurred while retrieving record summaries.  Some of the records on the server will not be shown.
 -dcf0-field:notifyRetrievedOnlySomeSummariescause=При загрузке краткой информации записей произошли ошибки. Некоторые записи, находящиеся на сервере, не будут показаны.
@@ -3925,9 +3916,6 @@
 #______________________________________=Import Server Response File
 -3f98-wintitle:ImportServerResponseFile=
 
-#________________________________=Include Private Data
--e6dc-wintitle:IncludePrivateData=Включить конфиденциальные данные
-
 #_____________________________________=Incompatible Java Version
 -4301-wintitle:IncompatibleJavaVersion=Несовместимая версия Java 
 
@@ -4159,9 +4147,6 @@
 #_________________________________=Delete All Data and Remove Martus
 -6fef-wintitle:confirmRemoveMartus=Удалить все данные и программу Martus
 
-#_________________________________________=All Data Private
--61f8-wintitle:confirmReportIncludePrivate=Все данные конфиденциальны
-
 #________________________________________=Reset Contents
 -6f62-wintitle:confirmResetDefaultDetails=Возврат к исходному содержанию
 
@@ -4287,9 +4272,6 @@
 
 #____________________________________=Contacts Server
 -b01e-wintitle:notifyContactsNoServer=Сервер контакта
-
-#__________________________________________=Missing List of Fields
--3ac5-wintitle:notifyCreatingFieldSpecCache=Отсутствует список полей
 
 #___________________________________________________=Moved Damaged Record
 -2079-wintitle:notifyDamagedBulletinMovedToDiscarded=Перемещенные повреждённые записи
@@ -4566,6 +4548,9 @@
 
 #__________________________________________________=Unable To Preview
 -061a-wintitle:notifyRetrievePreviewNotAvailableYet=Просмотр невозможен
+
+#___________________________________________=Retrieve Records
+-a076-wintitle:notifyRetrieveServerTurnedOff=Получить записи
 
 #______________________________________________=Error During Retrieve
 -f2d7-wintitle:notifyRetrievedOnlySomeSummaries=Ошибка загрузки 

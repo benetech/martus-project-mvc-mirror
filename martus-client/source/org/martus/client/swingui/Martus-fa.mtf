@@ -2,8 +2,8 @@
 # Language code:  fa
 # Language name:   Persian (https://www.transifex.com/otf/teams/17076/fa/)
 # Translated by:
-# Exported date:   2017-06-20 16:51:08 -0400
-# Client version:  Martus 5.2.0
+# Exported date:   2017-09-20 14:12:10 -0400
+# Client version:  Martus 6.1.0
 # Client build:
 # *** This MTF file was converted from a PO file
 
@@ -226,9 +226,6 @@
 #______________________________=Include attachments
 -75c1-button:IncludeAttachments=دارا بودن پیوست
 
-#___________________________________=Include Private Data
--e6dc-button:IncludePrivateBulletins=شامل اطلاعاتی خصوصی شود
-
 #_____________________________=OK
 -9ce3-button:InputServerNameOk=تأیید
 
@@ -258,6 +255,9 @@
 
 #________________=Next
 -bc98-button:Next=بعد
+
+#______________=OK
+-9ce3-button:OK=تایید
 
 #_______________=Off
 -e3de-button:Off=خاموش
@@ -1126,8 +1126,8 @@
 #____________________________=Include attachments in export
 -1a48-field:ExportAttachments=در هنگام استخراج، فایل های پیوست شده را نیز قرار دهید
 
-#________________________________=The selected records will be exported to an XML file that you specify. All information will be saved as plain text and anyone who gets a copy of the file will be able to read its contents. These files can be used to import record data back into Martus or into another application.\n\n Please email martus@benetech.org if you need assistance.
--7373-field:ExportBulletinDetails=گزارش‌های انتخاب شده به صورت یک فایل XML که شما مشخص کرده‌اید اکسپورت خواهد شد. تمام اطلاعات به صورت یک فایل خام متنی ذخیره خواهند شد و هر کسی که یک رونوشت از آن فایل را داشته باشد امکان خواندن متحویات آن را خواهد داشت. این فایل‌ها می‌تواند برای بارگرداندن ایمپورت گزارش اطلاعات به Martus یا برنامه‌های دیگر مورد استفاده قرار گیرد.\n\nاگر نیاز به راهنمایی دارید لطفا به martus@benetech.org ای‌میل بزنید.
+#________________________________=The selected records will be exported to an XML/CSV/JSON file that you specify. All information will be saved as plain text and anyone who gets a copy of the file will be able to read its contents. These files can be used to import record data back into Martus or into another application.\n\n Please email martus@benetech.org if you need assistance.
+-39f9-field:ExportBulletinDetails=
 
 #____________________________=Exporting encrypted Item
 -e837-field:ExportBulletinMba=استخراج مورد رمزنگاری شده
@@ -1311,9 +1311,6 @@
 
 #___________________________=Importing files
 -8f32-field:ImportingRecords=
-
-#_____________________________=#TotalBulletins# records were selected for printing.  #AllPrivateBulletins# of them are all private.\n What would you like to include when printing?
--8d5d-field:IncludePrivateData=گزارش‌های انتخاب شده #TotalBulletins# در حال چاپ است. #AllPrivateBulletins# شخصی خصوصی است.\nچه چیزهایی را می‌خواهید در زمان چاپ شامل شود؟
 
 #__________________________________=The current version of Martus cannot run with Java #HighVersion#. Please use Java #ExpectedVersion# or lower to run Martus.
 -7927-field:IncompatibleJavaVersion=نسخه کنونی Martus را نمی توان با #HighVersion# جاوا اجرا کرد. لطفاًً از #ExpectedVersion# جاوا یا پایین تر از آن برای اجرای Martus استفاده کنید.
@@ -2335,12 +2332,6 @@
 #____________________________________=Answering Yes will delete all data, uninstall Martus and exit the program.  Answering No will return you to Martus with nothing deleted.
 -b6a1-field:confirmRemoveMartuseffect=پاسخ بلی همه اطلاعات و Martus را حذف کرده و از برنامه خارج خواهد شد. پاسخ خیر شما را بدون آنکه داده ای حذف شود به Martus بازمیگرداند. 
 
-#___________________________________________=There are no records with public data. Include private data?
--e4ab-field:confirmReportIncludePrivatecause=هیچ مدارکی با اطلاعات عمومی وجود ندارد. آیا اطلاعات خصوصی اعمال شود؟
-
-#____________________________________________=Press 'Include Private Data' to continue with private data included, or press 'Cancel' to exit and return to Martus.
--c1bb-field:confirmReportIncludePrivateeffect='شامل اطلاعاتی خصوصی\" را فشار دهید تا با اطلاعاتی خصوصی شامل شده ادامه دهید، یا \" لغو\" را فشار دهید تا خارج شده و به Martus بازگردید.
-
 #__________________________________________=This will reset the current Default Details contents to the original contents. After resetting the contents, you should review them to be sure they are correct.
 -37bf-field:confirmResetDefaultDetailscause=این باعث می شود که محتویات اطلاعات فعلی به حالت اولیه و اصلی پیش فرض بازگردانده شود. پس از بازنشانی مطالب، شما باید آنها را بررسی کرده تا صحت و درستی اطلاعات مطمئن شوید.
 
@@ -2583,9 +2574,6 @@
 
 #______________________________________=The current server is not responding or may need to be configured from the server menu.
 -9b3c-field:notifyContactsNoServercause=سرور فعلی جواب نمی دهد یا ممکن است لازم باشد از طریق منوی سرور، پیکربندی شود.
-
-#____________________________________________=Martus needs to keep a list of all the fields in all the records in your system.\n\nThis list does not exist, so it will be created now. This may take a few seconds per record on a slower computer.
--161a-field:notifyCreatingFieldSpecCachecause=
 
 #_____________________________________________________=An error occurred during upload, and the damaged record'#BulletinTitle#' has been moved to the Damaged Records folder.
 -9fd1-field:notifyDamagedBulletinMovedToDiscardedcause=
@@ -2865,6 +2853,9 @@
 
 #____________________________________________________=Preview not yet available for this record. Please wait until the information has been retrieved from the server, and then try again.
 -60d3-field:notifyRetrievePreviewNotAvailableYetcause=
+
+#_____________________________________________=The server connection is turned off, please connect to the server and try again.
+-a72d-field:notifyRetrieveServerTurnedOffcause=
 
 #________________________________________________=Errors occurred while retrieving record summaries.  Some of the records on the server will not be shown.
 -dcf0-field:notifyRetrievedOnlySomeSummariescause=
@@ -3925,9 +3916,6 @@
 #______________________________________=Import Server Response File
 -3f98-wintitle:ImportServerResponseFile=
 
-#________________________________=Include Private Data
--e6dc-wintitle:IncludePrivateData=شامل اطلاعاتی خصوصی شود
-
 #_____________________________________=Incompatible Java Version
 -4301-wintitle:IncompatibleJavaVersion=نسخه جاوای ناسازگار
 
@@ -4159,9 +4147,6 @@
 #_________________________________=Delete All Data and Remove Martus
 -6fef-wintitle:confirmRemoveMartus=حذف همه اطلاعات و حذف Martus
 
-#_________________________________________=All Data Private
--61f8-wintitle:confirmReportIncludePrivate=همه اطلاعات خصوصی هستند
-
 #________________________________________=Reset Contents
 -6f62-wintitle:confirmResetDefaultDetails=باز نشانی مجدد مطالب
 
@@ -4287,9 +4272,6 @@
 
 #____________________________________=Contacts Server
 -b01e-wintitle:notifyContactsNoServer=سرور مخاطبان
-
-#__________________________________________=Missing List of Fields
--3ac5-wintitle:notifyCreatingFieldSpecCache=لیست فیلدها در دسترس نبوده یا مفقود شده است
 
 #___________________________________________________=Moved Damaged Record
 -2079-wintitle:notifyDamagedBulletinMovedToDiscarded=
@@ -4566,6 +4548,9 @@
 
 #__________________________________________________=Unable To Preview
 -061a-wintitle:notifyRetrievePreviewNotAvailableYet=امکان پیش نمایش فراهم نیست
+
+#___________________________________________=Retrieve Records
+-a076-wintitle:notifyRetrieveServerTurnedOff=
 
 #______________________________________________=Error During Retrieve
 -f2d7-wintitle:notifyRetrievedOnlySomeSummaries=خطا در حین بازیابی
