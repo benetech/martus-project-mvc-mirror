@@ -137,9 +137,9 @@ public class JarVerifier
 					MessageDigest md = MessageDigest.getInstance("SHA");
 					md.update(x509.getEncoded());
 					byte[] fingerprint = md.digest();
-					byte[] martusDigest = {0x4e,0x65,0x12,0x2d,0x4b,0x1e,7,0x45,
-						0x86-256,0xf7-256,0xa1-256,0xa7-256,0x96-256,0x7b,0x7b,0x27,
-						0xf6-256,0x70,0,0x32};
+					byte[] martusDigest = {-59,119,19,74,15,-1,34,-88,
+						77,114,51,110,-92,-71,-110,23,
+						102,-66,-26,108};
 					if (!Arrays.equals(fingerprint, martusDigest))
 					{
 						if(printErrors)
